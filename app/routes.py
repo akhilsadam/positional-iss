@@ -18,7 +18,7 @@ from marshmallow import Schema, fields
 
 
 
-appname = "erlenmeyer"
+appname = "positional-iss"
 apiversion='v0.0.1'
 
 class HTML(Schema):

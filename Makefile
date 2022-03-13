@@ -1,5 +1,5 @@
 NAME=akhilsadam
-PACKAGE=erlenmeyer
+PACKAGE=positional-iss
 TAG=0.0.1
 #PYTESTS=<>
 
