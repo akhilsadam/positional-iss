@@ -1,0 +1,28 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div style="overflow:hidden;">
+<div class="main">
+<div class="rooftopbase">
+<div class="rooftop">
+  <div class="rooftext">
+    <div class="rooftitle">{{ title }}</div>
+      <a href="{{ readmelink }}" class="dash-link">
+        github readme
+        <i class="fa-solid fa-code"></i>
+      </a>&nbsp&nbsp
+      <a href="/pdf" class="dash-link">
+        article
+        <i class="fa-solid fa-indent"></i>
+      </a>&nbsp&nbsp
+      <a href="/api/doc" class="dash-link">
+        api
+        <i class="fa-brands fa-connectdevelop"></i>
+      </a>&nbsp&nbsp
+    </div>
+  </div>
+</div>
+</div>
+<div class="header"></div>
+</div>
+{% endblock %}

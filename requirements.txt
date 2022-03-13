@@ -1,0 +1,14 @@
+flask
+flask_assets
+apispec
+apispec_webframeworks
+marshmallow
+webargs
+flask-apispec
+python-dotenv
+numpy
+matplotlib 
+jpcm 
+pynverse
+colour_science
+pytest
