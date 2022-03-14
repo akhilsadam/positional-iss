@@ -38,6 +38,9 @@ push:
 	docker push ${NAME}/${PACKAGE}:${TAG}
 
 # [WARNING] The following commands may require unlisted dependencies and are not part of the supported API.
+# Notes for developer convenience:
+#	 May need to be done on Windows due to some npm issues.
+
 
 readme:
 	git status
