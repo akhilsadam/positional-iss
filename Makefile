@@ -50,5 +50,5 @@ readme:
 commit:
 	git status
 	git add .
-	git commit -am "[glob] ${commit}"
+	git commit -am "[glob] ${msg}"
 	git push
