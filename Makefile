@@ -48,8 +48,6 @@ readme:
 	git push
 
 commit:
-	echo "MSG:"
-	read commit
 	git status
 	git add .
 	git commit -am "[glob] ${commit}"
