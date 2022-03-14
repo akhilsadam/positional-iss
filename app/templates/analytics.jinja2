@@ -12,3 +12,11 @@
     s.parentNode.insertBefore(t, s);
   })();
 </script>
+<script type="text/javascript">
+window.onload = function() {
+   let myiFrame = document.getElementById("emapi");
+   let doc = myiFrame.contentDocument;
+   doc.head.innerHTML = doc.head.innerHTML + '<style> {{ styles }} </style>';
+
+}
+</script>
