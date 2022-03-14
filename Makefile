@@ -47,8 +47,8 @@ readme:
 	npx @appnest/readme generate
 	git status
 	git add .
-	git commit -am "[auto] update readme"
-	git push
+	- git commit -am "[auto] update readme"
+	- git push
 
 commit:
 	git status
