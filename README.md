@@ -9,5 +9,21 @@
 ## ➤ Table of Contents
 
 * [➤ positional-ISS](#-positional-iss)
-{{ template:contributors }}
-{{ template:license }}
+	* [➤ Contributors](#-contributors)
+	* [➤ License](#-license)
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
+
+## ➤ Contributors
+	
+
+| [undefined](undefined) |
+|:------------------------:|
+
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
+
+## ➤ License
+	
+Licensed under [MIT](https://opensource.org/licenses/MIT).

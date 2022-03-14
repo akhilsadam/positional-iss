@@ -1,5 +1,10 @@
 {
-  "devDependencies": {
-    "@appnest/readme": "^1.2.7"
-  }
+    "devDependencies": {
+        "@appnest/readme": "^1.2.7"
+    },
+    "name": "akhilsadam",
+    "version": "0.0.1",
+    "logo": "/app/static/img/stellar_disk.png",
+    "contributors": ["akhilsadam"],
+    "license": "MIT"
 }
