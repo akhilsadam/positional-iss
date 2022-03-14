@@ -55,7 +55,7 @@ class positional(MethodResource):
           parameters:
           - name: name
             in: path
-            description: Value of epoch to be queried. Ex: 2022-042T12:04:00.000Z
+            description: Value of epoch to be queried. Ex 2022-042T12:04:00.000Z
             required: true
             schema:
               type: string

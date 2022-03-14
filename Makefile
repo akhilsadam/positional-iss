@@ -1,5 +1,6 @@
 NAME=akhilsadam
 PACKAGE=positional-iss
+GITHUB=git@github.com:akhilsadam/positional-iss.git
 TAG=0.0.1
 #PYTESTS=<>
 
@@ -35,3 +36,21 @@ run:
 push:
 	docker login docker.io
 	docker push ${NAME}/${PACKAGE}:${TAG}
+
+# [WARNING] The following commands may require unlisted dependencies and are not part of the supported API.
+
+readme:
+	git status
+	npx @appnest/readme generate
+	git status
+	git add .
+	git commit -am "[auto] update readme"
+	git push
+
+commit:
+	echo "MSG:"
+	read commit
+	git status
+	git add .
+	git commit -am "[glob] $commit"
+	git push

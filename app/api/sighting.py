@@ -57,7 +57,7 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex: United_States
+            description: Value (name) of country to be queried. Ex United_States
             required: true
             schema:
               type: string
@@ -72,8 +72,10 @@ class sighting(MethodResource):
         try: 
             sight = data.sight()
             indx = np.where(np.array([sight[i]["country"] for i in range(len(sight))]) == country)[0]
-            logger.debug(indx)
+            # logger.debug(indx)
             country = sight[indx].tolist()
+            if len(country)==0:
+              raise ValueError
         except ValueError as v:
             msg = "Invalid input: no country exists as queried. Please try again with a valid country."
             logger.error(f'{route}: {msg}')
@@ -98,7 +100,7 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex: United_States
+            description: Value (name) of country to be queried. Ex United_States
             required: true
             schema:
               type: string
@@ -113,8 +115,10 @@ class sighting(MethodResource):
         try: 
             sight = data.sight()
             indx = np.where(np.array([sight[i]["country"] for i in range(len(sight))]) == country)[0]
-            logger.debug(indx)
+            # logger.debug(indx)
             region = np.unique([x["region"] for x in sight[indx]]).tolist()
+            if len(region)==0:
+              raise ValueError
         except ValueError as v:
             msg = "Invalid input: no country exists as queried. Please try again with a valid country."
             logger.error(f'{route}: {msg}')
@@ -139,13 +143,13 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex: United_States
+            description: Value (name) of country to be queried. Ex United_States
             required: true
             schema:
               type: string
           - name: region
             in: path
-            description: Value (name) of region to be queried. Ex: Kansas
+            description: Value (name) of region to be queried. Ex Kansas
             required: true
             schema:
               type: string
@@ -162,6 +166,8 @@ class sighting(MethodResource):
             indx = np.where(np.array([sight[i]["country"] for i in range(len(sight))]) == country)[0]
             indx2 = np.where(np.array([x["region"] for x in sight[indx]]) == region)[0]
             city = sight[indx][indx2].tolist()
+            if len(city)==0:
+              raise ValueError
             # logger.debug(city)
         except ValueError as v:
             msg = "Invalid input: either no country or region exists as queried. Please try again with valid input."
@@ -187,13 +193,13 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex: United_States
+            description: Value (name) of country to be queried. Ex United_States
             required: true
             schema:
               type: string
           - name: region
             in: path
-            description: Value (name) of region to be queried. Ex: Kansas
+            description: Value (name) of region to be queried. Ex Kansas
             required: true
             schema:
               type: string
@@ -210,6 +216,8 @@ class sighting(MethodResource):
             indx = np.where(np.array([sight[i]["country"] for i in range(len(sight))]) == country)[0]
             indx2 = np.where(np.array([x["region"] for x in sight[indx]]) == region)[0]
             city = np.unique([x['city'] for x in sight[indx][indx2]]).tolist()
+            if len(city)==0:
+              raise ValueError
             # logger.debug(city)
         except ValueError as v:
             msg = "Invalid input: either no country or region exists as queried. Please try again with valid input."
@@ -235,19 +243,19 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex: United_States
+            description: Value (name) of country to be queried. Ex United_States
             required: true
             schema:
               type: string
           - name: region
             in: path
-            description: Value (name) of region to be queried. Ex: Kansas
+            description: Value (name) of region to be queried. Ex Kansas
             required: true
             schema:
               type: string
           - name: city
             in: path
-            description: Value (name) of city to be queried. Ex: Wichita
+            description: Value (name) of city to be queried. Ex Wichita
             required: true
             schema:
               type: string
@@ -265,10 +273,12 @@ class sighting(MethodResource):
             indx2 = np.where(np.array([x["region"] for x in sight[indx]]) == region)[0]
             indx3 = np.where(np.array([x["city"] for x in sight[indx][indx2]]) == city)[0]
             city = sight[indx][indx2][indx3].tolist()
+            if len(city)==0:
+              raise ValueError
             # logger.debug(city)
         except ValueError as v:
-            msg = "Invalid input: either no country nor region nor city exists as queried. Please try again with valid input. \
-              (if this message seems grammatically incorrect to you, replace the 'nor' with 'or no'.)"
+            msg = "Invalid input: either no country nor region nor city exists as queried. Please try again with valid input.\
+              \n(if this message seems grammatically incorrect to you, replace the 'nor' with 'or no'.)"
             logger.error(f'{route}: {msg}')
             return msg
         except Exception as e:
