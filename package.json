@@ -2,11 +2,13 @@
     "devDependencies": {
         "@appnest/readme": "^1.2.7"
     },
-    "name": "akhilsadam",
+    "name": "positional-iss",
     "version": "0.0.1",
     "description": "Automatically generate a beautiful best-practice README file based on the contents of your repository",
     "logo": "positional-iss",
     "logo.src": "https://github.com/akhilsadam/positional-iss/blob/master/app/static/img/stellar_disk.png",
-    "contributors": ["akhilsadam"],
+    "contributors": [
+        { "name": "Akhil Sadam" }
+    ],
     "license": "MIT"
 }
