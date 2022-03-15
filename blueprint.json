@@ -1,3 +1,7 @@
 {
-    "line": "cloudy"
+    "line": "cloudy",
+    "headingPrefix": {
+        "1": " ",
+        "2": " "
+    }
 }

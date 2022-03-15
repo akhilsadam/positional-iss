@@ -5,14 +5,14 @@
 <!-- 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#table-of-contents)
 
-## ➤ Table of Contents
+##  Table of Contents
 
-* [➤ Contributors](#-contributors)
-* [➤ License](#-license) -->
+* [ Contributors](#-contributors)
+* [ License](#-license) -->
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#contributors)
 
-## ➤ Contributors
+##  Contributors
 	
 
 | [Akhil Sadam](https://github.com/akhilsadam) |
@@ -22,6 +22,6 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#license)
 
-## ➤ License
+##  License
 	
 Licensed under [MIT](https://opensource.org/licenses/MIT).
