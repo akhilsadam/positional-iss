@@ -1,4 +1,5 @@
 {{ template:title }}
+{{ template:description }}
 
 {{ doc: Dockerfile }}
 
