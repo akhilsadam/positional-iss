@@ -1,7 +1,7 @@
 {{ template:logo }}
 # positional-ISS
 
-{{ doc:assets.py }}
+{{ doc: Dockerfile }}
 
 <!-- {{ template:toc }} -->
 {{ template:contributors }}
