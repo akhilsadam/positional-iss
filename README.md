@@ -9,15 +9,15 @@ Midterm project for COE332.</b></br>
 
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#implementation--files-chapter)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#implementation--files)
 
-##  Implementation / Files {.chapter}
+##  Implementation / Files
 
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#input-data--chapter)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#input-data)
 
-##  Input Data  {.chapter}
+##  Input Data
 
 - The application queries data from the National Aeronautics and Space Administration (NASA) public website, in particular ISS positional information via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_OEM/ISS.OEM_J2K_EPH.xml">Public Distribution file</a> and regional sighting data for the Midwest via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_sightings/XMLsightingData_citiesUSA05.xml">XMLsightingData_citiesUSA05</a> file.
 
@@ -28,8 +28,8 @@ Example input data is available at the above links.
 
 ##  Table of Contents
 
-* [ Implementation / Files {.chapter}](#-implementation--files-chapter)
-* [ Input Data  {.chapter}](#-input-data--chapter)
+* [ Implementation / Files](#-implementation--files)
+* [ Input Data](#-input-data)
 * [ Contributors](#-contributors)
 * [ License](#-license) -->
 
