@@ -1,7 +1,8 @@
 {{ template:title }}
 {{ template:description }}
 
-## Files
+{{ load:doc/implement.md }}
+
 {{ load:doc/input.md }}
 
 <!-- {{ template:toc }} -->

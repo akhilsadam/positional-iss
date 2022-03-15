@@ -1,6 +1,7 @@
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️--><h1 align="center">positional-iss</h1>
 <p align="center">
-  <b>An containerized Flask webserver designed for querying ISS sightings and positions on Feb.13,2022. / Midterm project for COE332 </b></br>
+  <b>An containerized Flask webserver designed for querying ISS sightings and positions on February 13, 2022.
+Midterm project for COE332.</b></br>
   <sub><sub>
 </p>
 
@@ -8,13 +9,16 @@
 
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#files)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#implementation--files)
 
-##  Files
+##  Implementation / Files
+
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#input-data)
 
 ##  Input Data
+
 - The application queries data from the National Aeronautics and Space Administration (NASA) public website, in particular ISS positional information via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_OEM/ISS.OEM_J2K_EPH.xml">Public Distribution file</a> and regional sighting data for the Midwest via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_sightings/XMLsightingData_citiesUSA05.xml">XMLsightingData_citiesUSA05</a> file.
 
 Example input data is available at the above links.
@@ -24,7 +28,7 @@ Example input data is available at the above links.
 
 ##  Table of Contents
 
-* [ Files](#-files)
+* [ Implementation / Files](#-implementation--files)
 * [ Input Data](#-input-data)
 * [ Contributors](#-contributors)
 * [ License](#-license) -->
