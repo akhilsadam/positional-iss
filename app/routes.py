@@ -73,6 +73,8 @@ def api():
         apilink = "/apis",
         styles = """.opblock.opblock-options{display: none;}
          *{font-family: Kiona, Aron Grotesque Light, Montserrat Regular !important; font-variant-ligatures: none !important; }
+         .swagger-ui .opblock.opblock-get{border-color:rgb(103, 36, 34); background-color: rgba(103, 36, 34, 0.1);}
+         .swagger-ui .opblock.opblock-post{border-color:rgb(27, 41, 75); background-color: rgba(27, 41, 75, 0.1);}
          """.replace("\n"," ")
     )
 
