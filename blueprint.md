@@ -1,5 +1,8 @@
 {{ template:logo }}
 # positional-ISS
-{{ template:toc }}
+
+{{ doc:app/assets.py }}
+
+<!-- {{ template:toc }} -->
 {{ template:contributors }}
 {{ template:license }}

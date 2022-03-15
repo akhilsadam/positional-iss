@@ -4,13 +4,16 @@
 
 # ➤ positional-ISS
 
+
+
+<!-- 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 ## ➤ Table of Contents
 
 * [➤ positional-ISS](#-positional-iss)
 	* [➤ Contributors](#-contributors)
-	* [➤ License](#-license)
+	* [➤ License](#-license) -->
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
 
