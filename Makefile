@@ -23,6 +23,7 @@ clean:
 	- docker rm ${PACKAGE}
 	- rm __pycache__/ -r
 	- rm app/.pytest_cache/ -r
+	- rm doc/r/log_r.txt
 
 build:
 	docker build -t ${NAME}/${PACKAGE}:${TAG} .
@@ -37,9 +38,12 @@ push:
 	docker login docker.io
 	docker push ${NAME}/${PACKAGE}:${TAG}
 
+
 # [WARNING] The following commands may require unlisted dependencies and are not part of the supported API.
 # Notes for developer convenience:
 #	 May need to be done on Windows due to some npm issues.
+#	 Requires R and some packages
+#	 Some paths will need to be modified (this is due to a path issue on our end).
 
 
 readme:
@@ -49,6 +53,11 @@ readme:
 	git add .
 	- git commit -am "[auto] update readme"
 	- git push
+
+pdf:
+	"C:\Program Files\R\R-4.0.3\bin\Rscript" -e 'pagedown::chrome_print('"'doc/r/article.rmd'"')' > doc/r/log_r.txt
+	mv doc/r/article.pdf app/static/doc/article.pdf
+	mv doc/r/article.html app/static/doc/article.html
 
 commit:
 	git status

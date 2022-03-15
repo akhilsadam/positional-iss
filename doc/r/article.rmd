@@ -5,7 +5,7 @@ author:
     affiliation: Aerospace Department, University of Texas at Austin
     email: <akhil.sadam@utexas.edu>
 date: '`r format(Sys.time(), "%d %B, %Y")`'
-abstract: 'An containerized Flask webserver designed for querying ISS sightings and positions on February 13, 2022.\nMidterm project for COE332. R is used to produce documentation'
+abstract: 'An containerized Flask webserver designed for querying ISS sightings and positions on February 13, 2022. Midterm project for COE332. R is used to produce documentation.'
 # at least one keyword must be supplied
 keywords: [positional-iss, Docker, Flask, Python3, R]
 links-to-footnotes: true

@@ -8,6 +8,9 @@
     <i class="fa-solid fa-diamond"></i>
   </a>
 </div>
-<div class="card colz">{{ general }}</div>
+<div class="card colz">
+{{ general }}
+<iframe class="emapi" id="emapi" type="text/html" src="{{ url_for('static', filename='doc/article.html') }}" height="100%" width="100%" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+</div>
 </div>
 {% endblock %}

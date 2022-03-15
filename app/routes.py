@@ -93,8 +93,7 @@ def pdf():
     """
     return render_template(
         "readme.jinja2",
-        general=
-"""Documentation""",
+        general="",
         template="home-template",
     )
 
