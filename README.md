@@ -1,8 +1,4 @@
-<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->{{ template:logo }}
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#positional-iss)
-
-# ➤ positional-ISS
+<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️--><h1 align="center">positional-iss</h1>
 
 
 
@@ -11,9 +7,8 @@
 
 ## ➤ Table of Contents
 
-* [➤ positional-ISS](#-positional-iss)
-	* [➤ Contributors](#-contributors)
-	* [➤ License](#-license) -->
+* [➤ Contributors](#-contributors)
+* [➤ License](#-license) -->
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
 
