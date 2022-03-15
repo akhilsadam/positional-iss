@@ -9,6 +9,7 @@
         "src": "https://github.com/akhilsadam/positional-iss/blob/67af1d3f1f8941332f88cc2ab44aa6c9561fcbe2/app/static/img/stellar_disk.png",
         "width": "150"
     },
+    "logo.src": "https://github.com/akhilsadam/positional-iss/blob/67af1d3f1f8941332f88cc2ab44aa6c9561fcbe2/app/static/img/stellar_disk.png",
     "contributors": [
         { "name": "Akhil Sadam", "url": "https://github.com/akhilsadam" }
     ],
