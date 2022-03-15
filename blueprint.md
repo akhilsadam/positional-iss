@@ -1,7 +1,7 @@
 {{ template:logo }}
 # positional-ISS
 
-{{ doc:app/assets.py }}
+{{ doc:assets.py }}
 
 <!-- {{ template:toc }} -->
 {{ template:contributors }}
