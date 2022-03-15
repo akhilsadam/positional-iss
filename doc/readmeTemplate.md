@@ -1,9 +1,3 @@
-# HW 04 Containerization
-
-This is a Docker containerization test program, where we containerize the following project.
-
-> ## Metorite Landing Summary Statistics
-> We calculate summary statistics for meteorite landings on Mars, from a json datafile describing the landings.
 
 ## Files
 - .gitignore        : ignores any temporary files
@@ -13,8 +7,7 @@ This is a Docker containerization test program, where we containerize the follow
 - Dockerfile        : a docker instruction set to help build a docker container for the program
 - Makefile          : a makefile to automate the clean / build / run / push commands for the docker container
 
-## Input Data
-- The input datafile should be of similar form to the example datafile `data/data.json` provided.
+
 
 <details open>
 <summary>data.json (HEAD)</summary>
@@ -146,20 +139,3 @@ Summary for 30 meteors:
 ```
 
 </details>
-
-## Additional Data
-
-<details open>
-<summary>more data, if you are interested</summary>
-
-- If you are interested, more data is available <a href=https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json>at this link</a>
-- To run this data with the Docker container, simply follow the below steps.
-```
-wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
-docker run --rm -v ${PWD}:/data akhilsadam/ml_data_analysis:hw04 land.py data/ML_Data_Sample.json
-```
-
-</details>
-
-# Notes
-- Some of the commands may require a `sudo` superuser elevation prefix; again, your mileage may vary.

@@ -1,7 +1,8 @@
 {{ template:title }}
 {{ template:description }}
 
-{{ doc: Dockerfile }}
+## Files
+{{ load:doc/input.md }}
 
 <!-- {{ template:toc }} -->
 {{ template:contributors }}
