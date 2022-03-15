@@ -17,8 +17,8 @@
 ## ➤ Contributors
 	
 
-| [Akhil Sadam](undefined) |
-|:--------------------------:|
+| [Akhil Sadam](https://github.com/akhilsadam) |
+|:----------------------------------------------:|
 
 
 
