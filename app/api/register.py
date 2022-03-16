@@ -124,7 +124,7 @@ def formatAPI(io):
     resp = " - Responses: \n  - {}".format("\n  - ".join(f[3]))
     if f[5] is not None:
       opt = " yields: "
-      eoc = "  \n> ".join(f[5].split("\n"))
+      eoc = "```"+"  \n ".join(f[5].split("\n"))+"```"
     else:
       opt = ''
       eoc = ''

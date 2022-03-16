@@ -32526,8 +32526,9 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
 <blockquote>
-<p>[
-“United_States”]</p>
+<p>[<br />
+“United_States”<br />
+]</p>
 </blockquote>
 </div>
 <div id="endpoint-countrycountry" class="section level3">
@@ -32541,36 +32542,37 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
 <blockquote>
-<p>[
-{
-“city”: “Olathe”,
-“country”: “United_States”,
-“duration_minutes”: “6”,
-“enters”: “10 above SSW”,
-“exits”: “10 above ENE”,
-“max_elevation”: “28”,
-“region”: “Kansas”,
-“sighting_date”: “Thu Feb 17/06:13 AM”,
-“spacecraft”: “ISS”,
-“utc_date”: “Feb 17, 2022”,
-“utc_offset”: “-6.0”,
-“utc_time”: “12:13”
-},
-….
-{
-“city”: “Nantucket”,
-“country”: “United_States”,
-“duration_minutes”: “3”,
-“enters”: “19 above NNW”,
-“exits”: “10 above NNE”,
-“max_elevation”: “19”,
-“region”: “Massachusetts”,
-“sighting_date”: “Sat Feb 26/04:56 AM”,
-“spacecraft”: “ISS”,
-“utc_date”: “Feb 26, 2022”,
-“utc_offset”: “-5.0”,
-“utc_time”: “09:56”
-}]</p>
+<p>[<br />
+{<br />
+“city”: “Olathe”,<br />
+“country”: “United_States”,<br />
+“duration_minutes”: “6”,<br />
+“enters”: “10 above SSW”,<br />
+“exits”: “10 above ENE”,<br />
+“max_elevation”: “28”,<br />
+“region”: “Kansas”,<br />
+“sighting_date”: “Thu Feb 17/06:13 AM”,<br />
+“spacecraft”: “ISS”,<br />
+“utc_date”: “Feb 17, 2022”,<br />
+“utc_offset”: “-6.0”,<br />
+“utc_time”: “12:13”<br />
+},<br />
+….<br />
+{<br />
+“city”: “Nantucket”,<br />
+“country”: “United_States”,<br />
+“duration_minutes”: “3”,<br />
+“enters”: “19 above NNW”,<br />
+“exits”: “10 above NNE”,<br />
+“max_elevation”: “19”,<br />
+“region”: “Massachusetts”,<br />
+“sighting_date”: “Sat Feb 26/04:56 AM”,<br />
+“spacecraft”: “ISS”,<br />
+“utc_date”: “Feb 26, 2022”,<br />
+“utc_offset”: “-5.0”,<br />
+“utc_time”: “09:56”<br />
+}<br />
+]</p>
 </blockquote>
 </div>
 <div id="endpoint-countrycountryregion" class="section level3">
@@ -32584,14 +32586,15 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States/region -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
 <blockquote>
-<p>[
-“Kansas”,
-“Kentucky”,
-“Louisiana”,
-“Maine”,
-“Mariana_Islands”,
-“Maryland”,
-“Massachusetts”]</p>
+<p>[<br />
+“Kansas”,<br />
+“Kentucky”,<br />
+“Louisiana”,<br />
+“Maine”,<br />
+“Mariana_Islands”,<br />
+“Maryland”,<br />
+“Massachusetts”<br />
+]</p>
 </blockquote>
 </div>
 <div id="endpoint-countrycountryregionregion" class="section level3">
@@ -32606,36 +32609,37 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
 <blockquote>
-<p>[
-{
-“city”: “Olathe”,
-“country”: “United_States”,
-“duration_minutes”: “6”,
-“enters”: “10 above SSW”,
-“exits”: “10 above ENE”,
-“max_elevation”: “28”,
-“region”: “Kansas”,
-“sighting_date”: “Thu Feb 17/06:13 AM”,
-“spacecraft”: “ISS”,
-“utc_date”: “Feb 17, 2022”,
-“utc_offset”: “-6.0”,
-“utc_time”: “12:13”
-},
-….
-{
-“city”: “Yates_Center”,
-“country”: “United_States”,
-“duration_minutes”: “1”,
-“enters”: “12 above N”,
-“exits”: “10 above N”,
-“max_elevation”: “12”,
-“region”: “Kansas”,
-“sighting_date”: “Sat Feb 26/05:29 AM”,
-“spacecraft”: “ISS”,
-“utc_date”: “Feb 26, 2022”,
-“utc_offset”: “-6.0”,
-“utc_time”: “11:29”
-}]</p>
+<p>[<br />
+{<br />
+“city”: “Olathe”,<br />
+“country”: “United_States”,<br />
+“duration_minutes”: “6”,<br />
+“enters”: “10 above SSW”,<br />
+“exits”: “10 above ENE”,<br />
+“max_elevation”: “28”,<br />
+“region”: “Kansas”,<br />
+“sighting_date”: “Thu Feb 17/06:13 AM”,<br />
+“spacecraft”: “ISS”,<br />
+“utc_date”: “Feb 17, 2022”,<br />
+“utc_offset”: “-6.0”,<br />
+“utc_time”: “12:13”<br />
+},<br />
+….<br />
+{<br />
+“city”: “Yates_Center”,<br />
+“country”: “United_States”,<br />
+“duration_minutes”: “1”,<br />
+“enters”: “12 above N”,<br />
+“exits”: “10 above N”,<br />
+“max_elevation”: “12”,<br />
+“region”: “Kansas”,<br />
+“sighting_date”: “Sat Feb 26/05:29 AM”,<br />
+“spacecraft”: “ISS”,<br />
+“utc_date”: “Feb 26, 2022”,<br />
+“utc_offset”: “-6.0”,<br />
+“utc_time”: “11:29”<br />
+}<br />
+]</p>
 </blockquote>
 </div>
 <div id="endpoint-countrycountryregionregioncity" class="section level3">
@@ -32650,36 +32654,37 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas/city -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
 <blockquote>
-<p>[
-“Olathe”,
-“Osborne”,
-“Oskaloosa”,
-“Oswego”,
-“Ottawa”,
-“Paola”,
-“Phillipsburg”,
-“Pittsburg”,
-“Pratt”,
-“Russell”,
-“Saint_Francis”,
-“Saint_John”,
-“Salina”,
-“Scott_City”,
-….
-“Sublette”,
-“Syracuse”,
-“Tallgrass_Prairie_National_Preserve”,
-“Topeka”,
-“Tribune”,
-“Troy”,
-“Ulysses”,
-“WaKeeny”,
-“Washington”,
-“Wellington”,
-“Westmoreland”,
-“Wichita”,
-“Winfield”,
-“Yates_Center”]</p>
+<p>[<br />
+“Olathe”,<br />
+“Osborne”,<br />
+“Oskaloosa”,<br />
+“Oswego”,<br />
+“Ottawa”,<br />
+“Paola”,<br />
+“Phillipsburg”,<br />
+“Pittsburg”,<br />
+“Pratt”,<br />
+“Russell”,<br />
+“Saint_Francis”,<br />
+“Saint_John”,<br />
+“Salina”,<br />
+“Scott_City”,<br />
+….<br />
+“Sublette”,<br />
+“Syracuse”,<br />
+“Tallgrass_Prairie_National_Preserve”,<br />
+“Topeka”,<br />
+“Tribune”,<br />
+“Troy”,<br />
+“Ulysses”,<br />
+“WaKeeny”,<br />
+“Washington”,<br />
+“Wellington”,<br />
+“Westmoreland”,<br />
+“Wichita”,<br />
+“Winfield”,<br />
+“Yates_Center”<br />
+]</p>
 </blockquote>
 </div>
 <div id="endpoint-countrycountryregionregioncitycity" class="section level3">
@@ -32695,36 +32700,37 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas/city/Wichita -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
 <blockquote>
-<p>[
-{
-“city”: “Wichita”,
-“country”: “United_States”,
-“duration_minutes”: “6”,
-“enters”: “10 above S”,
-“exits”: “10 above ENE”,
-“max_elevation”: “25”,
-“region”: “Kansas”,
-“sighting_date”: “Thu Feb 17/06:12 AM”,
-“spacecraft”: “ISS”,
-“utc_date”: “Feb 17, 2022”,
-“utc_offset”: “-6.0”,
-“utc_time”: “12:12”
-},
-….
-{
-“city”: “Wichita”,
-“country”: “United_States”,
-“duration_minutes”: “1”,
-“enters”: “12 above N”,
-“exits”: “10 above N”,
-“max_elevation”: “12”,
-“region”: “Kansas”,
-“sighting_date”: “Sat Feb 26/05:29 AM”,
-“spacecraft”: “ISS”,
-“utc_date”: “Feb 26, 2022”,
-“utc_offset”: “-6.0”,
-“utc_time”: “11:29”
-}]</p>
+<p>[<br />
+{<br />
+“city”: “Wichita”,<br />
+“country”: “United_States”,<br />
+“duration_minutes”: “6”,<br />
+“enters”: “10 above S”,<br />
+“exits”: “10 above ENE”,<br />
+“max_elevation”: “25”,<br />
+“region”: “Kansas”,<br />
+“sighting_date”: “Thu Feb 17/06:12 AM”,<br />
+“spacecraft”: “ISS”,<br />
+“utc_date”: “Feb 17, 2022”,<br />
+“utc_offset”: “-6.0”,<br />
+“utc_time”: “12:12”<br />
+},<br />
+….<br />
+{<br />
+“city”: “Wichita”,<br />
+“country”: “United_States”,<br />
+“duration_minutes”: “1”,<br />
+“enters”: “12 above N”,<br />
+“exits”: “10 above N”,<br />
+“max_elevation”: “12”,<br />
+“region”: “Kansas”,<br />
+“sighting_date”: “Sat Feb 26/05:29 AM”,<br />
+“spacecraft”: “ISS”,<br />
+“utc_date”: “Feb 26, 2022”,<br />
+“utc_offset”: “-6.0”,<br />
+“utc_time”: “11:29”<br />
+}<br />
+]</p>
 </blockquote>
 </div>
 <div id="endpoint-data" class="section level3">
@@ -32752,36 +32758,37 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/epoch -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
 <blockquote>
-<p>[
-“2022-042T12:00:00.000Z”,
-“2022-042T12:04:00.000Z”,
-“2022-042T12:08:00.000Z”,
-“2022-042T12:12:00.000Z”,
-“2022-042T12:16:00.000Z”,
-“2022-042T12:20:00.000Z”,
-“2022-042T12:24:00.000Z”,
-“2022-042T12:28:00.000Z”,
-“2022-042T12:32:00.000Z”,
-“2022-042T12:36:00.000Z”,
-“2022-042T12:40:00.000Z”,
-“2022-042T12:44:00.000Z”,
-“2022-042T12:48:00.000Z”,
-“2022-042T12:52:00.000Z”,
-….
-“2022-057T11:08:56.869Z”,
-“2022-057T11:12:56.869Z”,
-“2022-057T11:16:56.869Z”,
-“2022-057T11:20:56.869Z”,
-“2022-057T11:24:56.869Z”,
-“2022-057T11:28:56.869Z”,
-“2022-057T11:32:56.869Z”,
-“2022-057T11:36:56.869Z”,
-“2022-057T11:40:56.869Z”,
-“2022-057T11:44:56.869Z”,
-“2022-057T11:48:56.869Z”,
-“2022-057T11:52:56.869Z”,
-“2022-057T11:56:56.869Z”,
-“2022-057T12:00:00.000Z”]</p>
+<p>[<br />
+“2022-042T12:00:00.000Z”,<br />
+“2022-042T12:04:00.000Z”,<br />
+“2022-042T12:08:00.000Z”,<br />
+“2022-042T12:12:00.000Z”,<br />
+“2022-042T12:16:00.000Z”,<br />
+“2022-042T12:20:00.000Z”,<br />
+“2022-042T12:24:00.000Z”,<br />
+“2022-042T12:28:00.000Z”,<br />
+“2022-042T12:32:00.000Z”,<br />
+“2022-042T12:36:00.000Z”,<br />
+“2022-042T12:40:00.000Z”,<br />
+“2022-042T12:44:00.000Z”,<br />
+“2022-042T12:48:00.000Z”,<br />
+“2022-042T12:52:00.000Z”,<br />
+….<br />
+“2022-057T11:08:56.869Z”,<br />
+“2022-057T11:12:56.869Z”,<br />
+“2022-057T11:16:56.869Z”,<br />
+“2022-057T11:20:56.869Z”,<br />
+“2022-057T11:24:56.869Z”,<br />
+“2022-057T11:28:56.869Z”,<br />
+“2022-057T11:32:56.869Z”,<br />
+“2022-057T11:36:56.869Z”,<br />
+“2022-057T11:40:56.869Z”,<br />
+“2022-057T11:44:56.869Z”,<br />
+“2022-057T11:48:56.869Z”,<br />
+“2022-057T11:52:56.869Z”,<br />
+“2022-057T11:56:56.869Z”,<br />
+“2022-057T12:00:00.000Z”<br />
+]</p>
 </blockquote>
 </div>
 <div id="endpoint-epochname" class="section level3">
@@ -32795,32 +32802,32 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/epoch/2022-042T12:04:00.000Z -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
 <blockquote>
-<p>{
-“EPOCH”: “2022-042T12:04:00.000Z”,
-“X”: {
-“#text”: “-4483.2181885642003”,
-“<span class="citation">@units</span>”: “km”
-},
-“X_DOT”: {
-“#text”: “2.63479158884966”,
-“<span class="citation">@units</span>”: “km/s”
-},
-“Y”: {
-“#text”: “-4839.4374260438099”,
-“<span class="citation">@units</span>”: “km”
-},
-“Y_DOT”: {
-“#text”: “-4.3774148889971602”,
-“<span class="citation">@units</span>”: “km/s”
-},
-“Z”: {
-“#text”: “-1653.1850590663901”,
-“<span class="citation">@units</span>”: “km”
-},
-“Z_DOT”: {
-“#text”: “5.7014974180323597”,
-“<span class="citation">@units</span>”: “km/s”
-}
+<p>{<br />
+“EPOCH”: “2022-042T12:04:00.000Z”,<br />
+“X”: {<br />
+“#text”: “-4483.2181885642003”,<br />
+“<span class="citation">@units</span>”: “km”<br />
+},<br />
+“X_DOT”: {<br />
+“#text”: “2.63479158884966”,<br />
+“<span class="citation">@units</span>”: “km/s”<br />
+},<br />
+“Y”: {<br />
+“#text”: “-4839.4374260438099”,<br />
+“<span class="citation">@units</span>”: “km”<br />
+},<br />
+“Y_DOT”: {<br />
+“#text”: “-4.3774148889971602”,<br />
+“<span class="citation">@units</span>”: “km/s”<br />
+},<br />
+“Z”: {<br />
+“#text”: “-1653.1850590663901”,<br />
+“<span class="citation">@units</span>”: “km”<br />
+},<br />
+“Z_DOT”: {<br />
+“#text”: “5.7014974180323597”,<br />
+“<span class="citation">@units</span>”: “km/s”<br />
+}<br />
 }</p>
 </blockquote>
 </div>
