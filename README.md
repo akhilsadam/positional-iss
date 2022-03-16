@@ -67,7 +67,8 @@ Example input data is available at the above links.
 ```  
  [  
      "United_States"  
- ]```
+ ]
+```
 
 ### ENDPOINT: /country/{country}
  - Description: Get data for a single country.
@@ -108,7 +109,8 @@ Example input data is available at the above links.
          "utc_offset": "-5.0",  
          "utc_time": "09:56"  
      }  
- ]```
+ ]
+```
 
 ### ENDPOINT: /country/{country}/region
  - Description: Get data for all regions of a certain country.
@@ -127,7 +129,8 @@ Example input data is available at the above links.
      "Mariana_Islands",  
      "Maryland",  
      "Massachusetts"  
- ]```
+ ]
+```
 
 ### ENDPOINT: /country/{country}/region/{region}
  - Description: Get all data for a specific region of a certain country.
@@ -169,7 +172,8 @@ Example input data is available at the above links.
          "utc_offset": "-6.0",  
          "utc_time": "11:29"  
      }  
- ]```
+ ]
+```
 
 ### ENDPOINT: /country/{country}/region/{region}/city
  - Description: Get all cities for a specific region of a certain country.
@@ -211,7 +215,8 @@ Example input data is available at the above links.
      "Wichita",  
      "Winfield",  
      "Yates_Center"  
- ]```
+ ]
+```
 
 ### ENDPOINT: /country/{country}/region/{region}/city/{city}
  - Description: Get all information for a specific city of a region of a certain country.
@@ -254,7 +259,8 @@ Example input data is available at the above links.
          "utc_offset": "-6.0",  
          "utc_time": "11:29"  
      }  
- ]```
+ ]
+```
 
 ### ENDPOINT: /data
  - Description: Updates the list of data dictionaries.
@@ -265,7 +271,8 @@ Example input data is available at the above links.
 
  - Example: `curl -X POST http://0.0.0.0:5026/data -H "accept: application/json"` yields: 
 ```  
- "Data updated."```
+ "Data updated."
+```
 
 ### ENDPOINT: /epoch
  - Description: Get all possible epochs.
@@ -306,7 +313,8 @@ Example input data is available at the above links.
      "2022-057T11:52:56.869Z",  
      "2022-057T11:56:56.869Z",  
      "2022-057T12:00:00.000Z"  
- ]```
+ ]
+```
 
 ### ENDPOINT: /epoch/{name}
  - Description: Get data for a single epoch.
@@ -343,7 +351,8 @@ Example input data is available at the above links.
          "#text": "5.7014974180323597",  
          "@units": "km/s"  
      }  
- }```
+ }
+```
 
 ### ENDPOINT: /pdf
  - Description: Get writeup HTML

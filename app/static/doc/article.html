@@ -32525,23 +32525,18 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>A 200 response will: Return a list of countries.</p></li>
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
-<blockquote>
-<p>[<br />
-“United_States”<br />
-]</p>
-</blockquote>
-</div>
-<div id="endpoint-countrycountry" class="section level3">
-<h3>ENDPOINT: /country/{country}</h3>
-<ul>
-<li><p>Description: Get data for a single country.</p></li>
-<li><p>Parameters:</p></li>
-<li><p>country : Value (name) of country to be queried. An example: United_States</p></li>
-<li><p>Responses:</p></li>
-<li><p>A 200 response will: Return all matching (queried country) sightings as json.</p></li>
-<li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States -H &quot;accept: application/json&quot;</code> yields:</p></li>
-</ul>
-<blockquote>
+<pre><code> [  
+     &quot;United_States&quot;  
+ ]```
+
+### ENDPOINT: /country/{country}
+ - Description: Get data for a single country.
+ - Parameters: 
+  - country :   Value (name) of country to be queried.  An example: United_States
+ - Responses: 
+  - A 200 response will: Return all matching (queried country) sightings as json.
+
+ - Example: `curl -X GET http://0.0.0.0:5026/country/United_States -H &quot;accept: application/json&quot;` yields: </code></pre>
 <p>[<br />
 {<br />
 “city”: “Olathe”,<br />
@@ -32572,8 +32567,7 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 “utc_offset”: “-5.0”,<br />
 “utc_time”: “09:56”<br />
 }<br />
-]</p>
-</blockquote>
+]```</p>
 </div>
 <div id="endpoint-countrycountryregion" class="section level3">
 <h3>ENDPOINT: /country/{country}/region</h3>
@@ -32585,30 +32579,25 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>A 200 response will: Return all matching regions for the queried country as json.</p></li>
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States/region -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
-<blockquote>
-<p>[<br />
-“Kansas”,<br />
-“Kentucky”,<br />
-“Louisiana”,<br />
-“Maine”,<br />
-“Mariana_Islands”,<br />
-“Maryland”,<br />
-“Massachusetts”<br />
-]</p>
-</blockquote>
-</div>
-<div id="endpoint-countrycountryregionregion" class="section level3">
-<h3>ENDPOINT: /country/{country}/region/{region}</h3>
-<ul>
-<li><p>Description: Get all data for a specific region of a certain country.</p></li>
-<li><p>Parameters:</p></li>
-<li><p>country : Value (name) of country to be queried. An example: United_States</p></li>
-<li><p>region : Value (name) of region to be queried. An example: Kansas</p></li>
-<li><p>Responses:</p></li>
-<li><p>A 200 response will: Return all matching results for the queried region as json.</p></li>
-<li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas -H &quot;accept: application/json&quot;</code> yields:</p></li>
-</ul>
-<blockquote>
+<pre><code> [  
+     &quot;Kansas&quot;,  
+     &quot;Kentucky&quot;,  
+     &quot;Louisiana&quot;,  
+     &quot;Maine&quot;,  
+     &quot;Mariana_Islands&quot;,  
+     &quot;Maryland&quot;,  
+     &quot;Massachusetts&quot;  
+ ]```
+
+### ENDPOINT: /country/{country}/region/{region}
+ - Description: Get all data for a specific region of a certain country.
+ - Parameters: 
+  - country :   Value (name) of country to be queried.  An example: United_States
+  - region  :   Value (name) of region to be queried.   An example: Kansas
+ - Responses: 
+  - A 200 response will: Return all matching results for the queried region as json.
+
+ - Example: `curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas -H &quot;accept: application/json&quot;` yields: </code></pre>
 <p>[<br />
 {<br />
 “city”: “Olathe”,<br />
@@ -32639,8 +32628,7 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 “utc_offset”: “-6.0”,<br />
 “utc_time”: “11:29”<br />
 }<br />
-]</p>
-</blockquote>
+]```</p>
 </div>
 <div id="endpoint-countrycountryregionregioncity" class="section level3">
 <h3>ENDPOINT: /country/{country}/region/{region}/city</h3>
@@ -32653,53 +32641,48 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>A 200 response will: Return all matching cities for the queried region and country as json.</p></li>
 <li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas/city -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
-<blockquote>
-<p>[<br />
-“Olathe”,<br />
-“Osborne”,<br />
-“Oskaloosa”,<br />
-“Oswego”,<br />
-“Ottawa”,<br />
-“Paola”,<br />
-“Phillipsburg”,<br />
-“Pittsburg”,<br />
-“Pratt”,<br />
-“Russell”,<br />
-“Saint_Francis”,<br />
-“Saint_John”,<br />
-“Salina”,<br />
-“Scott_City”,<br />
-….<br />
-“Sublette”,<br />
-“Syracuse”,<br />
-“Tallgrass_Prairie_National_Preserve”,<br />
-“Topeka”,<br />
-“Tribune”,<br />
-“Troy”,<br />
-“Ulysses”,<br />
-“WaKeeny”,<br />
-“Washington”,<br />
-“Wellington”,<br />
-“Westmoreland”,<br />
-“Wichita”,<br />
-“Winfield”,<br />
-“Yates_Center”<br />
-]</p>
-</blockquote>
-</div>
-<div id="endpoint-countrycountryregionregioncitycity" class="section level3">
-<h3>ENDPOINT: /country/{country}/region/{region}/city/{city}</h3>
-<ul>
-<li><p>Description: Get all information for a specific city of a region of a certain country.</p></li>
-<li><p>Parameters:</p></li>
-<li><p>country : Value (name) of country to be queried. An example: United_States</p></li>
-<li><p>region : Value (name) of region to be queried. An example: Kansas</p></li>
-<li><p>city : Value (name) of city to be queried. An example: Wichita</p></li>
-<li><p>Responses:</p></li>
-<li><p>A 200 response will: Return all information for the queried city as json.</p></li>
-<li><p>Example: <code>curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas/city/Wichita -H &quot;accept: application/json&quot;</code> yields:</p></li>
-</ul>
-<blockquote>
+<pre><code> [  
+     &quot;Olathe&quot;,  
+     &quot;Osborne&quot;,  
+     &quot;Oskaloosa&quot;,  
+     &quot;Oswego&quot;,  
+     &quot;Ottawa&quot;,  
+     &quot;Paola&quot;,  
+     &quot;Phillipsburg&quot;,  
+     &quot;Pittsburg&quot;,  
+     &quot;Pratt&quot;,  
+     &quot;Russell&quot;,  
+     &quot;Saint_Francis&quot;,  
+     &quot;Saint_John&quot;,  
+     &quot;Salina&quot;,  
+     &quot;Scott_City&quot;,  
+ ....  
+     &quot;Sublette&quot;,  
+     &quot;Syracuse&quot;,  
+     &quot;Tallgrass_Prairie_National_Preserve&quot;,  
+     &quot;Topeka&quot;,  
+     &quot;Tribune&quot;,  
+     &quot;Troy&quot;,  
+     &quot;Ulysses&quot;,  
+     &quot;WaKeeny&quot;,  
+     &quot;Washington&quot;,  
+     &quot;Wellington&quot;,  
+     &quot;Westmoreland&quot;,  
+     &quot;Wichita&quot;,  
+     &quot;Winfield&quot;,  
+     &quot;Yates_Center&quot;  
+ ]```
+
+### ENDPOINT: /country/{country}/region/{region}/city/{city}
+ - Description: Get all information for a specific city of a region of a certain country.
+ - Parameters: 
+  - country :   Value (name) of country to be queried.  An example: United_States
+  - region  :   Value (name) of region to be queried.   An example: Kansas
+  - city    :   Value (name) of city to be queried. An example: Wichita
+ - Responses: 
+  - A 200 response will: Return all information for the queried city as json.
+
+ - Example: `curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas/city/Wichita -H &quot;accept: application/json&quot;` yields: </code></pre>
 <p>[<br />
 {<br />
 “city”: “Wichita”,<br />
@@ -32730,8 +32713,7 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 “utc_offset”: “-6.0”,<br />
 “utc_time”: “11:29”<br />
 }<br />
-]</p>
-</blockquote>
+]```</p>
 </div>
 <div id="endpoint-data" class="section level3">
 <h3>ENDPOINT: /data</h3>
@@ -32743,21 +32725,16 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>A 201 response will: Updated data dictionary list.</p></li>
 <li><p>Example: <code>curl -X POST http://0.0.0.0:5026/data -H &quot;accept: application/json&quot;</code> yields:</p></li>
 </ul>
-<blockquote>
-<p>“Data updated.”</p>
-</blockquote>
-</div>
-<div id="endpoint-epoch" class="section level3">
-<h3>ENDPOINT: /epoch</h3>
-<ul>
-<li><p>Description: Get all possible epochs.</p></li>
-<li><p>Parameters:</p></li>
-<li><p>N/A</p></li>
-<li><p>Responses:</p></li>
-<li><p>A 200 response will: Return a list of epochs.</p></li>
-<li><p>Example: <code>curl -X GET http://0.0.0.0:5026/epoch -H &quot;accept: application/json&quot;</code> yields:</p></li>
-</ul>
-<blockquote>
+<pre><code> &quot;Data updated.&quot;```
+
+### ENDPOINT: /epoch
+ - Description: Get all possible epochs.
+ - Parameters: 
+  - N/A
+ - Responses: 
+  - A 200 response will: Return a list of epochs.
+
+ - Example: `curl -X GET http://0.0.0.0:5026/epoch -H &quot;accept: application/json&quot;` yields: </code></pre>
 <p>[<br />
 “2022-042T12:00:00.000Z”,<br />
 “2022-042T12:04:00.000Z”,<br />
@@ -32788,8 +32765,7 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 “2022-057T11:52:56.869Z”,<br />
 “2022-057T11:56:56.869Z”,<br />
 “2022-057T12:00:00.000Z”<br />
-]</p>
-</blockquote>
+]```</p>
 </div>
 <div id="endpoint-epochname" class="section level3">
 <h3>ENDPOINT: /epoch/{name}</h3>
@@ -32799,37 +32775,9 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li><p>name : Value of epoch to be queried. An example: 2022-042T12:04:00.000Z</p></li>
 <li><p>Responses:</p></li>
 <li><p>A 200 response will: Return epoch information for first matching epoch as json.</p></li>
-<li><p>Example: <code>curl -X GET http://0.0.0.0:5026/epoch/2022-042T12:04:00.000Z -H &quot;accept: application/json&quot;</code> yields:</p></li>
+<li><p>Example: <code>curl -X GET http://0.0.0.0:5026/epoch/2022-042T12:04:00.000Z -H &quot;accept: application/json&quot;</code> yields:
+<code>{        &quot;EPOCH&quot;: &quot;2022-042T12:04:00.000Z&quot;,        &quot;X&quot;: {            &quot;#text&quot;: &quot;-4483.2181885642003&quot;,            &quot;@units&quot;: &quot;km&quot;        },        &quot;X_DOT&quot;: {            &quot;#text&quot;: &quot;2.63479158884966&quot;,            &quot;@units&quot;: &quot;km/s&quot;        },        &quot;Y&quot;: {            &quot;#text&quot;: &quot;-4839.4374260438099&quot;,            &quot;@units&quot;: &quot;km&quot;        },        &quot;Y_DOT&quot;: {            &quot;#text&quot;: &quot;-4.3774148889971602&quot;,            &quot;@units&quot;: &quot;km/s&quot;        },        &quot;Z&quot;: {            &quot;#text&quot;: &quot;-1653.1850590663901&quot;,            &quot;@units&quot;: &quot;km&quot;        },        &quot;Z_DOT&quot;: {            &quot;#text&quot;: &quot;5.7014974180323597&quot;,            &quot;@units&quot;: &quot;km/s&quot;        }    }</code></p></li>
 </ul>
-<blockquote>
-<p>{<br />
-“EPOCH”: “2022-042T12:04:00.000Z”,<br />
-“X”: {<br />
-“#text”: “-4483.2181885642003”,<br />
-“<span class="citation">@units</span>”: “km”<br />
-},<br />
-“X_DOT”: {<br />
-“#text”: “2.63479158884966”,<br />
-“<span class="citation">@units</span>”: “km/s”<br />
-},<br />
-“Y”: {<br />
-“#text”: “-4839.4374260438099”,<br />
-“<span class="citation">@units</span>”: “km”<br />
-},<br />
-“Y_DOT”: {<br />
-“#text”: “-4.3774148889971602”,<br />
-“<span class="citation">@units</span>”: “km/s”<br />
-},<br />
-“Z”: {<br />
-“#text”: “-1653.1850590663901”,<br />
-“<span class="citation">@units</span>”: “km”<br />
-},<br />
-“Z_DOT”: {<br />
-“#text”: “5.7014974180323597”,<br />
-“<span class="citation">@units</span>”: “km/s”<br />
-}<br />
-}</p>
-</blockquote>
 </div>
 <div id="endpoint-pdf" class="section level3">
 <h3>ENDPOINT: /pdf</h3>
