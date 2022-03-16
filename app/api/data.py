@@ -18,7 +18,9 @@ import numpy as np
 # class DataSchema(Schema):
 #     degrees = fields.List(fields.Dict())
 class SSchema(Schema):
-    string = fields.Str()
+  string = fields.Str()
+class JSON(Schema):
+  json = fields.List(fields.Dict())
 
 def get_data():
     """Get ISS Data from the Public Distribution and XMLsightingData_citiesUSA05 files.
@@ -49,7 +51,7 @@ class data(MethodResource):
             description: Updated data dictionary list.
             content:
               application/json:
-                schema: SSchema
+                schema: JSON
       """
       route="/data"
       try: data.public,data.sight = get_data()
@@ -60,7 +62,7 @@ class data(MethodResource):
         data._loaded = True
         msg = "Data updated."
         logger.info(f'{route}:{msg}')
-      return msg
+      return jsonify(msg)
       
 def public():
     """Get Public Distribution ISS Data.

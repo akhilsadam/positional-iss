@@ -12,8 +12,7 @@ logger = logging.getLogger('root')
 
 import app.api.data as data
 
-class JSON(Schema):
-    json = fields.List(fields.Dict())
+from app.api.data import JSON #schema
 
 class positional(MethodResource):
     @app.route("/epoch", methods=['GET'])
@@ -26,7 +25,7 @@ class positional(MethodResource):
             - ApiKeyAuth: []
           responses:
             200:
-              description: Returns a list of epochs.
+              description: Return a list of epochs.
               content:
                 application/json:
                   schema: JSON
@@ -55,13 +54,14 @@ class positional(MethodResource):
           parameters:
           - name: name
             in: path
-            description: Value of epoch to be queried. Ex 2022-042T12:04:00.000Z
+            description: Value of epoch to be queried.
             required: true
+            example: 2022-042T12:04:00.000Z
             schema:
               type: string
           responses:
 			200:
-			  description: Returns epoch information for first matching epoch as json.
+			  description: Return epoch information for first matching epoch as json.
 			  content:
 				application/json:
 				  schema: JSON

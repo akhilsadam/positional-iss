@@ -13,13 +13,6 @@
   <meta property="og:image:height" content="523"/>
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/styles.css') }}" />
-  <link rel="stylesheet" href="https://use.typekit.net/uqq2lcv.css">
-  <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"
-      crossorigin="anonymous"
-  />
   {% include 'analyticsHEAD.jinja2' %}
 </head>
 
@@ -28,6 +21,7 @@
 	  {% block content %}{% endblock %}
   </div>
   {% include 'analytics.jinja2' %}
+  {% include 'analyticsAPI.jinja2' %}
 </body>
 
 </html>

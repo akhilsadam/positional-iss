@@ -3,6 +3,9 @@ PACKAGE=positional-iss
 GITHUB=git@github.com:akhilsadam/positional-iss.git
 TAG=0.0.1
 #PYTESTS=<>
+APIFILE=doc/api.md
+SEARCH=\\n
+REPLACE=\n
 
 all: kill clean build test run push
 
@@ -45,7 +48,13 @@ push:
 #	 Requires R and some packages
 #	 Some paths will need to be modified (this is due to a path issue on our end).
 
-
+api:
+# container must be running!
+	curl -X GET "http://localhost:5026/api/save" -H "accept: application/json" -o "${APIFILE}"
+	# sed "s/${SEARCH}/${REPLACE}/" ${APIFILE}	
+	# sed "s/${SEARCH}/${REPLACE}/" ${APIFILE}
+	# sed "s/${SEARCH}/${REPLACE}/" ${APIFILE}
+	# sed "s/${SEARCH}/${REPLACE}/" ${APIFILE}
 readme:
 	git status
 	npx @appnest/readme generate

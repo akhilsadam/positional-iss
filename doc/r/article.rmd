@@ -15,6 +15,7 @@ output:
   pagedown::jss_paged:
     self_contained: true
     pandoc_args: --mathjax
+    md_extensions: +raw_html
 link-citations: yes
 # uncomment this line to produce HTML and PDF in RStudio:
 knit: pagedown::chrome_print

@@ -3,7 +3,7 @@
 }
 
 :root {
-    --kotoba: Kiona, Aron Grotesque Light, Montserrat Regular;
+    --kotoba: Kiona Regular, Aron Grotesque Light, Montserrat Regular;
     --aijiro: rgba(235, 246, 247, 1);
     --mashiro: rgb(255, 255, 255);
     --zoge-iro: rgb(255, 255, 240);
@@ -39,10 +39,31 @@
     --kuro-kotoba: var(--kurobeni);
 }
 
+.emapi_main {
+    background: black;
+}
+
 .emapi {
     z-index: 2;
-    height: calc(98vh - min(0.2vw, 0.1em) - max(5vw, 4em));
+    height: calc(100vh - min(0.2vw, 0.1em) - max(5vw, 4em) - 5px);
+    position: relative;
+    background: transparent !important;
+    z-index: 24;
     border: none;
+    overflow-y: none;
+}
+
+.emapi_bkg {
+    /* background-color: black; */
+    background: url(/static/img/stellar_disk2.png);
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - min(0.2vw, 0.1em) - max(5vw, 4em) - 5px);
+    z-index: 12;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    filter: brightness(0.25) contrast(1.35);
 }
 
 body,
@@ -299,5 +320,13 @@ nav a:hover {
 }
 
 nav a i {
+    margin-right: 5px
+}
+
+nav a i {
+    margin-right: 5px
+}
+
+av a i {
     margin-right: 5px
 }

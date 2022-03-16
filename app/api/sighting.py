@@ -28,7 +28,7 @@ class sighting(MethodResource):
             - ApiKeyAuth: []
           responses:
             200:
-              description: Returns a list of countries.
+              description: Return a list of countries.
               content:
                 application/json:
                   schema: JSON
@@ -57,13 +57,14 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex United_States
+            description: Value (name) of country to be queried.
             required: true
+            example: United_States
             schema:
               type: string
           responses:
 			200:
-			  description: Returns all matching (queried country) sightings as json.
+			  description: Return all matching (queried country) sightings as json.
 			  content:
 				application/json:
 				  schema: JSON
@@ -100,13 +101,14 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex United_States
+            description: Value (name) of country to be queried.
             required: true
+            example: United_States
             schema:
               type: string
           responses:
 			200:
-			  description: Returns all matching regions for the queried country as json.
+			  description: Return all matching regions for the queried country as json.
 			  content:
 				application/json:
 				  schema: JSON
@@ -143,19 +145,21 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex United_States
+            description: Value (name) of country to be queried.
             required: true
+            example: United_States
             schema:
               type: string
           - name: region
             in: path
-            description: Value (name) of region to be queried. Ex Kansas
+            description: Value (name) of region to be queried.
             required: true
+            example: Kansas
             schema:
               type: string
           responses:
 			200:
-			  description: Returns all matching results for the queried region as json.
+			  description: Return all matching results for the queried region as json.
 			  content:
 				application/json:
 				  schema: JSON
@@ -193,19 +197,21 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex United_States
+            description: Value (name) of country to be queried.
             required: true
+            example: United_States
             schema:
               type: string
           - name: region
             in: path
-            description: Value (name) of region to be queried. Ex Kansas
+            description: Value (name) of region to be queried.
             required: true
+            example: Kansas
             schema:
               type: string
           responses:
 			200:
-			  description: Returns all matching cities for the queried region and country as json.
+			  description: Return all matching cities for the queried region and country as json.
 			  content:
 				application/json:
 				  schema: JSON
@@ -243,25 +249,28 @@ class sighting(MethodResource):
           parameters:
           - name: country
             in: path
-            description: Value (name) of country to be queried. Ex United_States
+            description: Value (name) of country to be queried.
             required: true
+            example: United_States
             schema:
               type: string
           - name: region
             in: path
-            description: Value (name) of region to be queried. Ex Kansas
+            description: Value (name) of region to be queried.
             required: true
+            example: Kansas
             schema:
               type: string
           - name: city
             in: path
-            description: Value (name) of city to be queried. Ex Wichita
+            description: Value (name) of city to be queried.
             required: true
+            example: Wichita
             schema:
               type: string
           responses:
 			200:
-			  description: Returns all information for the queried city as json.
+			  description: Return all information for the queried city as json.
 			  content:
 				application/json:
 				  schema: JSON

@@ -70,12 +70,7 @@ def api():
         description="",
         template="home-template",
         readmelink = "https://github.com/akhilsadam/positional-iss",
-        apilink = "/apis",
-        styles = """.opblock.opblock-options{display: none;}
-         *{font-family: Kiona, Aron Grotesque Light, Montserrat Regular !important; font-variant-ligatures: none !important; }
-         .swagger-ui .opblock.opblock-get{border-color:rgb(103, 36, 34); background-color: rgba(103, 36, 34, 0.1);}
-         .swagger-ui .opblock.opblock-post{border-color:rgb(27, 41, 75); background-color: rgba(27, 41, 75, 0.1);}
-         """.replace("\n"," ")
+        apilink = "/api",
     )
 
 @app.route("/pdf", methods=['GET'])
@@ -123,14 +118,14 @@ app.config.update({
         openapi_version="3.0.2",
         plugins=[FlaskPlugin(), MarshmallowPlugin()],
     ),
-    'APISPEC_SWAGGER_URL': '/api',
-    'APISPEC_SWAGGER_UI_URL': '/apis',
+    'APISPEC_SWAGGER_URL': '/api/api.json',
+    'APISPEC_SWAGGER_UI_URL': '/api',
 })
 docs = FlaskApiSpec(app)
 
 docs.register(home)
 docs.register(pdf)
-
+docs.register(api)
 
 ### EVENT REGISTRATION | PLEASE LINE UP BY CLASS ###
 
@@ -145,5 +140,6 @@ for file in os.listdir('app/api/'):
         exec(f"methods = [attribute for attribute in dir({page}) if callable(getattr({page}, attribute)) and not attribute.startswith('__') and attribute not in denymethodlist]")
         for method in methods:
             logger.debug(f'{method}')
+            # print(method)
             exec(f'docs.register({page}.{method})')
     # exec(f'app.register_blueprint({page})')
