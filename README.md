@@ -31,7 +31,7 @@ Example input data is available at the above links.
  - Parameters: 
    -  N/A
  - Responses: 
-   -  A 200 response will: Return homepage HTML
+   -  A `200` response will : Return homepage HTML
 
  - Example: `curl -X GET http://0.0.0.0:5026/ -H "accept: application/json"`
 
@@ -41,7 +41,7 @@ Example input data is available at the above links.
  - Parameters: 
    -  N/A
  - Responses: 
-   -  A 200 response will: Return API HTML
+   -  A `200` response will : Return API HTML
 
  - Example: `curl -X GET http://0.0.0.0:5026/api/doc -H "accept: application/json"`
 
@@ -51,7 +51,7 @@ Example input data is available at the above links.
  - Parameters: 
    -  N/A
  - Responses: 
-   -  A 200 response will: Return rendered API as string
+   -  A `200` response will : Return rendered API as string
 
  - Example: `curl -X GET http://0.0.0.0:5026/api/save -H "accept: application/json"`
 
@@ -61,7 +61,7 @@ Example input data is available at the above links.
  - Parameters: 
    -  N/A
  - Responses: 
-   -  A 200 response will: Return a list of countries.
+   -  A `200` response will : Return a list of countries.
 
  - Example: `curl -X GET http://0.0.0.0:5026/country -H "accept: application/json"` yields: 
 ```  
@@ -73,9 +73,9 @@ Example input data is available at the above links.
 ### ENDPOINT: /country/{country}
  - Description: Get data for a single country.
  - Parameters: 
-   -  country	:	Value (name) of country to be queried.	An example: United_States
+   -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
  - Responses: 
-   -  A 200 response will: Return all matching (queried country) sightings as json.
+   -  A `200` response will : Return all matching (queried country) sightings as json.
 
  - Example: `curl -X GET http://0.0.0.0:5026/country/United_States -H "accept: application/json"` yields: 
 ```  
@@ -115,9 +115,9 @@ Example input data is available at the above links.
 ### ENDPOINT: /country/{country}/region
  - Description: Get data for all regions of a certain country.
  - Parameters: 
-   -  country	:	Value (name) of country to be queried.	An example: United_States
+   -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
  - Responses: 
-   -  A 200 response will: Return all matching regions for the queried country as json.
+   -  A `200` response will : Return all matching regions for the queried country as json.
 
  - Example: `curl -X GET http://0.0.0.0:5026/country/United_States/region -H "accept: application/json"` yields: 
 ```  
@@ -135,10 +135,10 @@ Example input data is available at the above links.
 ### ENDPOINT: /country/{country}/region/{region}
  - Description: Get all data for a specific region of a certain country.
  - Parameters: 
-   -  country	:	Value (name) of country to be queried.	An example: United_States
-   -  region	:	Value (name) of region to be queried.	An example: Kansas
+   -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
+   -  `region`	:	Value (name) of region to be queried.	An example would be : `Kansas`
  - Responses: 
-   -  A 200 response will: Return all matching results for the queried region as json.
+   -  A `200` response will : Return all matching results for the queried region as json.
 
  - Example: `curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas -H "accept: application/json"` yields: 
 ```  
@@ -178,10 +178,10 @@ Example input data is available at the above links.
 ### ENDPOINT: /country/{country}/region/{region}/city
  - Description: Get all cities for a specific region of a certain country.
  - Parameters: 
-   -  country	:	Value (name) of country to be queried.	An example: United_States
-   -  region	:	Value (name) of region to be queried.	An example: Kansas
+   -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
+   -  `region`	:	Value (name) of region to be queried.	An example would be : `Kansas`
  - Responses: 
-   -  A 200 response will: Return all matching cities for the queried region and country as json.
+   -  A `200` response will : Return all matching cities for the queried region and country as json.
 
  - Example: `curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas/city -H "accept: application/json"` yields: 
 ```  
@@ -221,11 +221,11 @@ Example input data is available at the above links.
 ### ENDPOINT: /country/{country}/region/{region}/city/{city}
  - Description: Get all information for a specific city of a region of a certain country.
  - Parameters: 
-   -  country	:	Value (name) of country to be queried.	An example: United_States
-   -  region	:	Value (name) of region to be queried.	An example: Kansas
-   -  city	:	Value (name) of city to be queried.	An example: Wichita
+   -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
+   -  `region`	:	Value (name) of region to be queried.	An example would be : `Kansas`
+   -  `city`	:	Value (name) of city to be queried.	An example would be : `Wichita`
  - Responses: 
-   -  A 200 response will: Return all information for the queried city as json.
+   -  A `200` response will : Return all information for the queried city as json.
 
  - Example: `curl -X GET http://0.0.0.0:5026/country/United_States/region/Kansas/city/Wichita -H "accept: application/json"` yields: 
 ```  
@@ -267,7 +267,7 @@ Example input data is available at the above links.
  - Parameters: 
    -  N/A
  - Responses: 
-   -  A 201 response will: Updated data dictionary list.
+   -  A `201` response will : Updated data dictionary list.
 
  - Example: `curl -X POST http://0.0.0.0:5026/data -H "accept: application/json"` yields: 
 ```  
@@ -279,7 +279,7 @@ Example input data is available at the above links.
  - Parameters: 
    -  N/A
  - Responses: 
-   -  A 200 response will: Return a list of epochs.
+   -  A `200` response will : Return a list of epochs.
 
  - Example: `curl -X GET http://0.0.0.0:5026/epoch -H "accept: application/json"` yields: 
 ```  
@@ -319,9 +319,9 @@ Example input data is available at the above links.
 ### ENDPOINT: /epoch/{name}
  - Description: Get data for a single epoch.
  - Parameters: 
-   -  name	:	Value of epoch to be queried.	An example: 2022-042T12:04:00.000Z
+   -  `name`	:	Value of epoch to be queried.	An example would be : `2022-042T12:04:00.000Z`
  - Responses: 
-   -  A 200 response will: Return epoch information for first matching epoch as json.
+   -  A `200` response will : Return epoch information for first matching epoch as json.
 
  - Example: `curl -X GET http://0.0.0.0:5026/epoch/2022-042T12:04:00.000Z -H "accept: application/json"` yields: 
 ```  
@@ -359,7 +359,7 @@ Example input data is available at the above links.
  - Parameters: 
    -  N/A
  - Responses: 
-   -  A 200 response will: Return writeup HTML
+   -  A `200` response will : Return writeup HTML
 
  - Example: `curl -X GET http://0.0.0.0:5026/pdf -H "accept: application/json"`
 

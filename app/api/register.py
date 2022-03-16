@@ -63,7 +63,7 @@ def generateAPI(api):
         if p in endpoint.keys():
           params = endpoint['parameters']
           values = dict([(pq['name'],pq['example']) for pq in params])
-          namedesc = [f"{pq['name']}\t:\t{pq['description']}\tAn example: {pq['example']}" for pq in params]
+          namedesc = [f"`{pq['name']}`\t:\t{pq['description']}\tAn example would be : `{pq['example']}`" for pq in params]
           io[i,2] = namedesc
           # logger.info(values)
           logger.info(f"PARAM:{namedesc}")
@@ -72,7 +72,7 @@ def generateAPI(api):
           io [i,2] = ["N/A"]
 
         resp = endpoint['responses']
-        respdesc = [f"A {ret} response will: {resp[ret]['description']}" for ret in resp.keys()]
+        respdesc = [f"A `{ret}` response will : {resp[ret]['description']}" for ret in resp.keys()]
         io[i,3] = respdesc
         logger.info(f"RESP:{respdesc}")
 
