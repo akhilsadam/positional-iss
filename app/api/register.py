@@ -120,8 +120,8 @@ def formatAPI(io):
     f = io[i,:]
     path = f"### ENDPOINT: {f[0]}"
     desc = f" - Description: {f[1]}"
-    param = " - Parameters: \n  - {}".format("\n  - ".join(f[2]))
-    resp = " - Responses: \n  - {}".format("\n  - ".join(f[3]))
+    param = " - Parameters: \n   -  {}".format("\n   -  ".join(f[2]))
+    resp = " - Responses: \n   -  {}".format("\n   -  ".join(f[3]))
     if f[5] is not None:
       opt = " yields: "
       eoc = "```"+"  \n ".join(f[5].split("\n"))+"\n```"
