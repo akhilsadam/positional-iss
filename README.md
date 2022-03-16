@@ -23,9 +23,9 @@ Midterm project for COE332.</b></br>
 
 Example input data is available at the above links.
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#api)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#rest-api)
 
-#  API:
+#  REST API:
 ### ENDPOINT: /
  - Description: Get homepage HTML
  - Parameters: 
@@ -370,7 +370,7 @@ Example input data is available at the above links.
 
 	* [ Implementation / Files](#-implementation--files)
 	* [ Input Data](#-input-data)
-* [ API:](#-api)
+* [ REST API:](#-rest-api)
 		* [ENDPOINT: /](#endpoint-)
 		* [ENDPOINT: /api/doc](#endpoint-apidoc)
 		* [ENDPOINT: /api/save](#endpoint-apisave)

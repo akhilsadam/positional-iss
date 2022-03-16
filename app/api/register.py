@@ -131,7 +131,7 @@ def formatAPI(io):
     eic = f"\n - Example: {f[4]}{opt}"
     st = "\n".join([path,desc,param,resp,eic,eoc])
     out.append(st)
-  return "# API:\n" + "\n\n".join(out)
+  return "# REST API:\n" + "\n\n".join(out)
 
 
 class register(MethodResource):

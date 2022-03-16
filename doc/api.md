@@ -1,4 +1,4 @@
-# API:
+# REST API:
 ### ENDPOINT: /
  - Description: Get homepage HTML
  - Parameters: 
