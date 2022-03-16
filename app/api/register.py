@@ -4,8 +4,7 @@ from flask import request as rq
 
 from flask_apispec import use_kwargs, marshal_with
 from flask_apispec.views import MethodResource
-from marshmallow import Schema
-from webargs import fields
+from app.api.schema import * #schema
 
 import logging
 logger = logging.getLogger('root')
@@ -16,7 +15,8 @@ import numpy as np
 
 from app.options import baseurl,mdfile
 
-# Not pytesting the following functions as 1) testing the requests is unecessary, 2) this is not core functionality and is not required by the specifications, 3) developer exhaustion...
+# Not pytesting the following functions as 1) testing the requests is unecessary, 2) this is not core functionality and is not required by the specifications,
+# 3) this is an API test in and of itself, and part of other tests, 4) developer exhaustion...
 
 def capture(url, type=0):
   """Parses JSON from an endpoint.
@@ -31,10 +31,11 @@ def capture(url, type=0):
   else:
     return js.loads(rqs.post(url).content.decode('utf8').replace("'", '"'))
 
-def generateAPI(api):
-  """Structure API information.
+def generateAPI(api,test=False):
+  """Structure API information (currenly assumes single endpoint: either GET or POST, not both).
   Arguments: 
     dict: The API dictionary parsed by FlaskApiSpec.
+    bool: Save test outputs?
   Returns:
     array: a NumPy array structure containing endpoints, descriptions, parameter names&descriptions, response descriptions, example input calls, example outputs.
   """
@@ -48,12 +49,17 @@ def generateAPI(api):
 
   io = np.zeros(shape=(len(paths),6),dtype=object) # endpoint,description, parameter names&descriptions, response descriptions, example input call, example output
 
+  if test:
+    exa = np.zeros(shape=(len(paths)),dtype=tuple(list,bool,object)) #  endpoint, status, example output
+
   # loop over API
 
   for i, pinfo in enumerate(zip(paths,api['paths'].values())):
     # logger.info(info['options'])
     path, info = pinfo
     io [i,0] = path
+    state = 0
+
     for k,key in enumerate(REST):
       if key in info.keys():
         endpoint = info[key]
@@ -90,20 +96,32 @@ def generateAPI(api):
         logger.info(f"CALL:{url}")
 
         if call not in denylist:
-          stringjs = js.dumps(capture(url,k), indent=4, sort_keys=True)
+          try:
+            rawstringjs = js.dumps(capture(url,k), indent=4, sort_keys=True)
+          except Exception as e:
+            rawstringjs = "API CALL FAILED"
+            state = 1
           # logger.info(stringjs)
-          segmented = stringjs.split("\n")
+          segmented = rawstringjs.split("\n")
           lox = len(segmented)
           if lox > 30:
             stringjsA = segmented[:15]
             stringjsA.extend(["...."])
             stringjsA.extend(segmented[lox-15:lox])
-            stringjs = "\n".join(stringjsA)
-          exresp = f"\n{stringjs}"
+            rawstringjs = "\n".join(stringjsA)
+          exresp = f"\n{rawstringjs}"
         else:
           exresp = None
         io[i,5] = exresp
         logger.info(f"OUT:{exresp}")
+
+        break # remember, single endpoints!
+
+    if test:
+      exa[i] = (path,state,js.loads(rawstringjs))
+
+  if test:
+    return exa    
   return io
 
 
@@ -118,7 +136,7 @@ def formatAPI(io):
   out = []
   for i in range(len(io)):
     f = io[i,:]
-    path = f"### ENDPOINT: {f[0]}"
+    path = f"### ENDPOINT: `{f[0]}`"
     desc = f" - Description: {f[1]}"
     param = " - Parameters: \n   -  {}".format("\n   -  ".join(f[2]))
     resp = " - Responses: \n   -  {}".format("\n   -  ".join(f[3]))

@@ -26,7 +26,7 @@ Example input data is available at the above links.
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#rest-api)
 
 #  REST API:
-### ENDPOINT: /
+### ENDPOINT: `/`
  - Description: Get homepage HTML
  - Parameters: 
    -  N/A
@@ -36,7 +36,7 @@ Example input data is available at the above links.
  - Example: `curl -X GET http://0.0.0.0:5026/ -H "accept: application/json"`
 
 
-### ENDPOINT: /api/doc
+### ENDPOINT: `/api/doc`
  - Description: Get API HTML
  - Parameters: 
    -  N/A
@@ -46,7 +46,7 @@ Example input data is available at the above links.
  - Example: `curl -X GET http://0.0.0.0:5026/api/doc -H "accept: application/json"`
 
 
-### ENDPOINT: /api/save
+### ENDPOINT: `/api/save`
  - Description: Get API as rendered string
  - Parameters: 
    -  N/A
@@ -56,7 +56,7 @@ Example input data is available at the above links.
  - Example: `curl -X GET http://0.0.0.0:5026/api/save -H "accept: application/json"`
 
 
-### ENDPOINT: /country
+### ENDPOINT: `/country`
  - Description: Get all possible countries.
  - Parameters: 
    -  N/A
@@ -70,7 +70,7 @@ Example input data is available at the above links.
  ]
 ```
 
-### ENDPOINT: /country/{country}
+### ENDPOINT: `/country/{country}`
  - Description: Get data for a single country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -112,7 +112,7 @@ Example input data is available at the above links.
  ]
 ```
 
-### ENDPOINT: /country/{country}/region
+### ENDPOINT: `/country/{country}/region`
  - Description: Get data for all regions of a certain country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -132,7 +132,7 @@ Example input data is available at the above links.
  ]
 ```
 
-### ENDPOINT: /country/{country}/region/{region}
+### ENDPOINT: `/country/{country}/region/{region}`
  - Description: Get all data for a specific region of a certain country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -175,7 +175,7 @@ Example input data is available at the above links.
  ]
 ```
 
-### ENDPOINT: /country/{country}/region/{region}/city
+### ENDPOINT: `/country/{country}/region/{region}/city`
  - Description: Get all cities for a specific region of a certain country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -218,7 +218,7 @@ Example input data is available at the above links.
  ]
 ```
 
-### ENDPOINT: /country/{country}/region/{region}/city/{city}
+### ENDPOINT: `/country/{country}/region/{region}/city/{city}`
  - Description: Get all information for a specific city of a region of a certain country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -262,7 +262,7 @@ Example input data is available at the above links.
  ]
 ```
 
-### ENDPOINT: /data
+### ENDPOINT: `/data`
  - Description: Updates the list of data dictionaries.
  - Parameters: 
    -  N/A
@@ -274,7 +274,7 @@ Example input data is available at the above links.
  "Data updated."
 ```
 
-### ENDPOINT: /epoch
+### ENDPOINT: `/epoch`
  - Description: Get all possible epochs.
  - Parameters: 
    -  N/A
@@ -316,7 +316,7 @@ Example input data is available at the above links.
  ]
 ```
 
-### ENDPOINT: /epoch/{name}
+### ENDPOINT: `/epoch/{name}`
  - Description: Get data for a single epoch.
  - Parameters: 
    -  `name`	:	Value of epoch to be queried.	An example would be : `2022-042T12:04:00.000Z`
@@ -354,7 +354,7 @@ Example input data is available at the above links.
  }
 ```
 
-### ENDPOINT: /pdf
+### ENDPOINT: `/pdf`
  - Description: Get writeup HTML
  - Parameters: 
    -  N/A
@@ -371,19 +371,19 @@ Example input data is available at the above links.
 	* [ Implementation / Files](#-implementation--files)
 	* [ Input Data](#-input-data)
 * [ REST API:](#-rest-api)
-		* [ENDPOINT: /](#endpoint-)
-		* [ENDPOINT: /api/doc](#endpoint-apidoc)
-		* [ENDPOINT: /api/save](#endpoint-apisave)
-		* [ENDPOINT: /country](#endpoint-country)
-		* [ENDPOINT: /country/{country}](#endpoint-countrycountry)
-		* [ENDPOINT: /country/{country}/region](#endpoint-countrycountryregion)
-		* [ENDPOINT: /country/{country}/region/{region}](#endpoint-countrycountryregionregion)
-		* [ENDPOINT: /country/{country}/region/{region}/city](#endpoint-countrycountryregionregioncity)
-		* [ENDPOINT: /country/{country}/region/{region}/city/{city}](#endpoint-countrycountryregionregioncitycity)
-		* [ENDPOINT: /data](#endpoint-data)
-		* [ENDPOINT: /epoch](#endpoint-epoch)
-		* [ENDPOINT: /epoch/{name}](#endpoint-epochname)
-		* [ENDPOINT: /pdf](#endpoint-pdf)
+		* [ENDPOINT: `/`](#endpoint-)
+		* [ENDPOINT: `/api/doc`](#endpoint-apidoc)
+		* [ENDPOINT: `/api/save`](#endpoint-apisave)
+		* [ENDPOINT: `/country`](#endpoint-country)
+		* [ENDPOINT: `/country/{country}`](#endpoint-countrycountry)
+		* [ENDPOINT: `/country/{country}/region`](#endpoint-countrycountryregion)
+		* [ENDPOINT: `/country/{country}/region/{region}`](#endpoint-countrycountryregionregion)
+		* [ENDPOINT: `/country/{country}/region/{region}/city`](#endpoint-countrycountryregionregioncity)
+		* [ENDPOINT: `/country/{country}/region/{region}/city/{city}`](#endpoint-countrycountryregionregioncitycity)
+		* [ENDPOINT: `/data`](#endpoint-data)
+		* [ENDPOINT: `/epoch`](#endpoint-epoch)
+		* [ENDPOINT: `/epoch/{name}`](#endpoint-epochname)
+		* [ENDPOINT: `/pdf`](#endpoint-pdf)
 	* [ Contributors](#-contributors)
 	* [ License](#-license) -->
 

@@ -13,16 +13,11 @@ from apispec.ext.marshmallow import MarshmallowPlugin
 from apispec_webframeworks.flask import FlaskPlugin
 from flask_apispec.extension import FlaskApiSpec
 
-
-from marshmallow import Schema, fields
+from app.api.schema import * #schema
 
 
 appname = "positional-iss"
 apiversion='v0.0.1'
-
-class HTML(Schema):
-    html = fields.Str()
-
 
 @app.route("/", methods=['GET'])
 def home():
@@ -129,7 +124,7 @@ docs.register(api)
 
 ### EVENT REGISTRATION | PLEASE LINE UP BY CLASS ###
 
-denylist = ['__pyc','__init']
+denylist = ['__pyc','__init','test','schema']
 denymethodlist = ['as_view','dispatch_request']
 
 methods = []

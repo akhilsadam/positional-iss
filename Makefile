@@ -2,7 +2,7 @@ NAME=akhilsadam
 PACKAGE=positional-iss
 GITHUB=git@github.com:akhilsadam/positional-iss.git
 TAG=0.0.1
-#PYTESTS=<>
+PYTEST=testall.py
 APIFILE=doc/api.md
 SEARCH=\\n
 REPLACE=\n
@@ -10,6 +10,8 @@ REPLACE=\n
 all: kill clean build test run push
 
 rapid: kill clean build run
+
+rapidtest: kill clean build test
 
 iterate: kill clean build test run
 
@@ -32,8 +34,7 @@ build:
 	docker build -t ${NAME}/${PACKAGE}:${TAG} .
 
 test:
-	docker run -it --rm ${NAME}/${PACKAGE}:${TAG} pytest ${PYTESTS}
-
+	docker run -it --rm ${NAME}/${PACKAGE}:${TAG} ${PYTEST}
 run:
 	docker run --name "${PACKAGE}" -p 5026:5026 ${NAME}/${PACKAGE}:${TAG} wsgi.py
 

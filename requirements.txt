@@ -13,4 +13,6 @@ matplotlib
 jpcm 
 pynverse
 colour_science
+black
+hypothesis
 pytest

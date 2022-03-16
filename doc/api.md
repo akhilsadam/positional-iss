@@ -1,5 +1,5 @@
 # REST API:
-### ENDPOINT: /
+### ENDPOINT: `/`
  - Description: Get homepage HTML
  - Parameters: 
    -  N/A
@@ -9,7 +9,7 @@
  - Example: `curl -X GET http://0.0.0.0:5026/ -H "accept: application/json"`
 
 
-### ENDPOINT: /api/doc
+### ENDPOINT: `/api/doc`
  - Description: Get API HTML
  - Parameters: 
    -  N/A
@@ -19,7 +19,7 @@
  - Example: `curl -X GET http://0.0.0.0:5026/api/doc -H "accept: application/json"`
 
 
-### ENDPOINT: /api/save
+### ENDPOINT: `/api/save`
  - Description: Get API as rendered string
  - Parameters: 
    -  N/A
@@ -29,7 +29,7 @@
  - Example: `curl -X GET http://0.0.0.0:5026/api/save -H "accept: application/json"`
 
 
-### ENDPOINT: /country
+### ENDPOINT: `/country`
  - Description: Get all possible countries.
  - Parameters: 
    -  N/A
@@ -43,7 +43,7 @@
  ]
 ```
 
-### ENDPOINT: /country/{country}
+### ENDPOINT: `/country/{country}`
  - Description: Get data for a single country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -85,7 +85,7 @@
  ]
 ```
 
-### ENDPOINT: /country/{country}/region
+### ENDPOINT: `/country/{country}/region`
  - Description: Get data for all regions of a certain country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -105,7 +105,7 @@
  ]
 ```
 
-### ENDPOINT: /country/{country}/region/{region}
+### ENDPOINT: `/country/{country}/region/{region}`
  - Description: Get all data for a specific region of a certain country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -148,7 +148,7 @@
  ]
 ```
 
-### ENDPOINT: /country/{country}/region/{region}/city
+### ENDPOINT: `/country/{country}/region/{region}/city`
  - Description: Get all cities for a specific region of a certain country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -191,7 +191,7 @@
  ]
 ```
 
-### ENDPOINT: /country/{country}/region/{region}/city/{city}
+### ENDPOINT: `/country/{country}/region/{region}/city/{city}`
  - Description: Get all information for a specific city of a region of a certain country.
  - Parameters: 
    -  `country`	:	Value (name) of country to be queried.	An example would be : `United_States`
@@ -235,7 +235,7 @@
  ]
 ```
 
-### ENDPOINT: /data
+### ENDPOINT: `/data`
  - Description: Updates the list of data dictionaries.
  - Parameters: 
    -  N/A
@@ -247,7 +247,7 @@
  "Data updated."
 ```
 
-### ENDPOINT: /epoch
+### ENDPOINT: `/epoch`
  - Description: Get all possible epochs.
  - Parameters: 
    -  N/A
@@ -289,7 +289,7 @@
  ]
 ```
 
-### ENDPOINT: /epoch/{name}
+### ENDPOINT: `/epoch/{name}`
  - Description: Get data for a single epoch.
  - Parameters: 
    -  `name`	:	Value of epoch to be queried.	An example would be : `2022-042T12:04:00.000Z`
@@ -327,7 +327,7 @@
  }
 ```
 
-### ENDPOINT: /pdf
+### ENDPOINT: `/pdf`
  - Description: Get writeup HTML
  - Parameters: 
    -  N/A

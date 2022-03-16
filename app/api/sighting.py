@@ -4,14 +4,12 @@ from flask import request as rq
 
 from flask_apispec import use_kwargs, marshal_with
 from flask_apispec.views import MethodResource
-from marshmallow import Schema
-from webargs import fields
+from app.api.schema import * #schema
 
 import logging
 logger = logging.getLogger('root')
 
 import app.api.data as data
-from app.api.positional import JSON #schema
 
 import numpy as np
 
