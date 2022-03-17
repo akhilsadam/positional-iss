@@ -5,23 +5,23 @@ This project uses Python3 (in particular Flask), and Docker for containerization
 The source is available <a href="https://github.com/akhilsadam/positional-iss/">here</a>, and a list of important files can be found below.
 ## Files
 
- - `app/`:&emsp;&emsp;&emsp;The application folder.
- - `doc/`:&emsp;&emsp;&emsp;A documentation folder.
- - `Dockerfile`:&emsp;&emsp;A dockerfile for containerization.
- - `Makefile`:&emsp;&emsp;A makefile for ease of compilation.
- - `requirements.txt`:&emsp;The list of Python3 requirements.
- - `wsgi.py`:&emsp;&emsp;&emsp;The main Python file.
+ - `app/`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The application folder.
+ - `doc/`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A documentation folder.
+ - `Dockerfile`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A dockerfile for containerization.
+ - `Makefile`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A makefile for ease of compilation.
+ - `requirements.txt`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The list of Python3 requirements.
+ - `wsgi.py`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The main Python file.
 
 ### The App/ Directory
 
-- `api/`:&emsp;&emsp;&emsp;Contains API route definitions in Python.
-- `static/`:&emsp;&emsp;&emsp;Contains static files for browser use.
-- `templates/`:&emsp;&emsp;Contains Jinja2 templates for browser use.
-- `test`:&emsp;&emsp;&emsp;Contains testfiles in Python.
-- `assets.py`:&emsp;&emsp;Collects static files for browser use.
-- `routes.py`:&emsp;&emsp;Collects the API route definitions.
-- `log.py`:&emsp;&emsp;&emsp;Defines Python logger.
-- `options.py`:&emsp;&emsp;Defines global options, like the application url.
+- `api/`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains API route definitions in Python.
+- `static/`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains static files for browser use.
+- `templates/`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains Jinja2 templates for browser use.
+- `test`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains testfiles in Python.
+- `assets.py`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Collects static files for browser use.
+- `routes.py`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Collects the API route definitions.
+- `log.py`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines Python logger.
+- `options.py`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines global options, like the application url.
 
 
 
