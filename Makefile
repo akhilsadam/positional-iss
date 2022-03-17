@@ -7,8 +7,6 @@ APIFILE=doc/api.md
 SEARCH=\\n
 REPLACE=\n
 
-all: kill clean build test run push
-
 rapid: kill clean build run
 
 rapidtest: kill clean build test
@@ -52,10 +50,7 @@ push:
 api:
 # container must be running!
 	curl -X GET "http://localhost:5026/api/save" -H "accept: application/json" -o "${APIFILE}"
-	# sed "s/${SEARCH}/${REPLACE}/" ${APIFILE}	
-	# sed "s/${SEARCH}/${REPLACE}/" ${APIFILE}
-	# sed "s/${SEARCH}/${REPLACE}/" ${APIFILE}
-	# sed "s/${SEARCH}/${REPLACE}/" ${APIFILE}
+
 readme:
 	git status
 	npx @appnest/readme generate
@@ -74,3 +69,6 @@ commit:
 	git add .
 	git commit -am "[glob] ${msg}"
 	git push
+
+all: # only on a win terminal
+	sh all.sh & (wait 10; make api; make pdf; make readme;); fg
