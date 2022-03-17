@@ -18,24 +18,84 @@ from app.options import baseurl,mdfile
 # Not pytesting the following functions as 1) testing the requests is unecessary, 2) this is not core functionality and is not required by the specifications,
 # 3) this is an API test in and of itself, and part of other tests, 4) developer exhaustion...
 
-def capture(url, type=0):
+def capture(url, type=0, appcontext=False):
   """Parses JSON from an endpoint.
-  Arguments:
-    str: A string containing the endpoint URL.
-    int: GET or POST endpoint?
+  Args:
+      url (str): A string containing the endpoint URL.
+      type (int): GET or POST endpoint?
+      appcontext (bool): Testing?
   Returns:
-    dict: the Python dictionary version of the input url JSON.
+      dict: the Python dictionary version of the input url JSON.
   """
-  if type==0:
-    return js.loads(rqs.get(url).content.decode('utf8').replace("'", '"'))
-  else:
-    return js.loads(rqs.post(url).content.decode('utf8').replace("'", '"'))
+  data = lambda x,appcontext: x.data if appcontext else x.content
+  decode = lambda x,appcontext: js.loads(data(x,appcontext).decode('utf8').replace("'", '"'))
 
-def generateAPI(api,test=False):
+  rqx = rqs if not appcontext else app.test_client()
+  cap = rqx.get(url) if type==0 else rqx.post(url)
+  out = decode(cap,appcontext)
+  logger.info(out)
+  return out
+
+def callresponse(i,k,path,values,io,rest,denylist,appcontext):
+  """The example call and response section from the generateAPI function.
+  Args:
+      i (int): io array index (current function id).
+      k (int): endpoint type index.
+      path (str): endpoint path.
+      values (dict): a dictionary describing parameters.
+      io (np.ndarray): an array containing all possible api information.
+      rest (str): endpoint type.
+      denylist (list): endpoints not considered.
+      appcontext (bool): Testing?
+  Returns:
+      int: success of API call (will be zero for success and expected fails).
+      str: the resulting response.
+  """
+  state = 0
+  if values is not None:
+    segmented = np.array(path.replace("{","}").split("}"))
+    odd = (np.array(list(range(len(segmented)))) % 2 == 1)
+    # logger.info(segmented[odd])
+    exval = [values[c] for c in segmented[odd]]
+    # logger.info(exval)
+    call = "".join([exval[int(j/2)] if odd[j] else segmented[j] for j in range(len(segmented))])
+  else:
+    call = path
+  url = f"{baseurl}{call}"
+  io[i,4] = f"`curl -X {rest} {url} -H \"accept: application/json\"`"
+  logger.info(f"CALL:{url}")
+
+  if call not in denylist:
+    try:
+      rawstringjs = js.dumps(capture(url,k,appcontext), indent=4, sort_keys=True)
+    except Exception as e:
+      rawstringjs = "API CALL FAILED"
+      state = 1
+    logger.info(rawstringjs)
+    segmented = rawstringjs.split("\n")
+    lox = len(segmented)
+    if lox > 30:
+      stringjsA = segmented[:15]
+      stringjsA.extend(["...."])
+      stringjsA.extend(segmented[lox-15:lox])
+      rawstringjs = "\n".join(stringjsA)
+    exresp = f"\n{rawstringjs}"
+  else:
+    exresp = None
+    rawstringjs = "Not Shown."
+  io[i,5] = exresp
+  logger.info(f"OUT:{exresp}")
+  return state,rawstringjs
+
+# really should split this function...
+
+def generateAPI(api,test=False,badvalues=False,appcontext=False):
   """Structure API information (currenly assumes single endpoint: either GET or POST, not both).
   Arguments: 
-    dict: The API dictionary parsed by FlaskApiSpec.
-    bool: Save test outputs?
+    api (dict): The API dictionary parsed by FlaskApiSpec.
+    test (bool): Save test outputs?
+    badvalues (bool): Use bad values for testing?
+    appcontext (bool): Testing?
   Returns:
     array: a NumPy array structure containing endpoints, descriptions, parameter names&descriptions, response descriptions, example input calls, example outputs.
   """
@@ -44,7 +104,7 @@ def generateAPI(api,test=False):
   p = 'parameters'
   paths = api['paths'].keys()
   denylist = ['/','/pdf','/api/save','/api/doc']
-
+  badval = "3"
   # make i/o array
 
   io = np.zeros(shape=(len(paths),6),dtype=object) # endpoint,description, parameter names&descriptions, response descriptions, example input call, example output
@@ -58,7 +118,6 @@ def generateAPI(api,test=False):
     # logger.info(info['options'])
     path, info = pinfo
     io [i,0] = path
-    state = 0
 
     for k,key in enumerate(REST):
       if key in info.keys():
@@ -82,53 +141,37 @@ def generateAPI(api,test=False):
         io[i,3] = respdesc
         logger.info(f"RESP:{respdesc}")
 
-        if values is not None:
-          segmented = np.array(path.replace("{","}").split("}"))
-          odd = (np.array(list(range(len(segmented)))) % 2 == 1)
-          # logger.info(segmented[odd])
-          exval = [values[c] for c in segmented[odd]]
-          # logger.info(exval)
-          call = "".join([exval[int(j/2)] if odd[j] else segmented[j] for j in range(len(segmented))])
-        else:
-          call = path
-        url = f"{baseurl}{call}"
-        io[i,4] = f"`curl -X {REST2[k]} {url} -H \"accept: application/json\"`"
-        logger.info(f"CALL:{url}")
-
-        if call not in denylist:
-          try:
-            rawstringjs = js.dumps(capture(url,k), indent=4, sort_keys=True)
-          except Exception as e:
-            rawstringjs = "API CALL FAILED"
-            state = 1
-          # logger.info(stringjs)
-          segmented = rawstringjs.split("\n")
-          lox = len(segmented)
-          if lox > 30:
-            stringjsA = segmented[:15]
-            stringjsA.extend(["...."])
-            stringjsA.extend(segmented[lox-15:lox])
-            rawstringjs = "\n".join(stringjsA)
-          exresp = f"\n{rawstringjs}"
-        else:
-          exresp = None
-        io[i,5] = exresp
-        logger.info(f"OUT:{exresp}")
+        if not badvalues:
+          state,rawstringjs = callresponse(i,k,path,values,io,REST2[k],denylist,appcontext)
+        else: # testing API
+          state = 1
+          if values is not None:
+            valuelen = len(values)
+            for r in range(valuelen):
+              val2 = values[:r]
+              val2.extend([badval])
+              val2.extend(values[r+1:])
+            state2,rawstringjs = callresponse(i,k,path,val2,io,REST2[k],denylist,appcontext)
+            state *= state2
+          else:
+            rawstringjs = "No testable parameters"
 
         break # remember, single endpoints!
 
     if test:
+      if badvalues: 
+        state = 1-state
       exa[i] = (path,state,js.loads(rawstringjs))
 
   if test:
-    return exa    
+    return exa
   return io
 
 
 def formatAPI(io):
   """Structure API information.
-  Arguments: 
-    array: a NumPy array structure containing descriptions, parameter names&descriptions, response descriptions, example input calls, example outputs.
+  Args: 
+    io (array): a NumPy array structure containing descriptions, parameter names&descriptions, response descriptions, example input calls, example outputs.
   Returns:
     string: a formatted Markdown output
   """
