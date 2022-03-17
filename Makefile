@@ -1,7 +1,7 @@
 NAME=akhilsadam
 PACKAGE=positional-iss
 GITHUB=git@github.com:akhilsadam/positional-iss.git
-TAG=0.0.1
+TAG=0.0.2
 PYTEST=testall.py
 APIFILE=doc/api.md
 SEARCH=\\n

@@ -32514,39 +32514,74 @@ We provide easy access to sightings of the ISS from various regions and cities i
 <h1>Installation &amp; Usage</h1>
 <p>A user can build this project from source, or use the provided Docker container on DockerHub.<br />
 A Docker installation is required for source builds, as we build and run a Docker image. The following commands are all terminal commands, and are expected to run on a Ubuntu 20.04 machine with Python3, and are written in that fashion. Mileage may vary for other systems.<br />
-We will describe the Docker installation first.<br />
-## From Docker:</p>
+We will describe the Docker installation first.</p>
+<div id="from-docker" class="section level2">
+<h2>From Docker:</h2>
 <div id="install" class="section level3">
 <h3>Install</h3>
-<p>To install the Docker container, first install Docker.
-- <code>apt-get install docker</code> (if using an Ubuntu machine, else get Docker from <a href="https://www.docker.com/">docker.com</a>.)</p>
-<p>Next install the containers.
-- <code>docker pull akhilsadam/positional-iss:0.0.2</code>
-### Run</p>
-<p>To test the code, please run the following in a terminal.
-- <code>docker run -it --rm akhilsadam/positional-iss:0.0.2 testall.py</code></p>
-<p>To run the code, please run the following in a terminal. The terminal should return a link, which can be viewed via a browser or with the <code>curl</code> commands documented in the API reference section.
-- <code>docker run --name &quot;positional-iss&quot; -p 5026:5026 akhilsadam/positional-iss:0.0.2 wsgi.py</code></p>
-<p>Now we will move to the source installation.
-## From Source:</p>
-<p>Since this is a Docker build, the requirements need not be installed on the server, as it will automatically be done on the Docker image.
-All commands, unless otherwise noted, are to be run in a terminal (in the home directory of the cloned repository).
-### Build</p>
-<p>Again, first install Docker.
-- <code>apt-get install docker</code> (if using an Ubuntu machine, else get Docker from <a href="https://www.docker.com/">docker.com</a>.)</p>
-<p>Next, clone the repository and change directory into the repository.
-- <code>git clone git@github.com:akhilsadam/positional-iss.git</code>
-- <code>cd positional-iss</code></p>
-<p>Now build the image.
-- <code>make build</code>
-### Run</p>
-<p>To test the code, please run one of the following.
-- <code>make test</code>
-- <code>pytest</code></p>
-<p>To run the code, please run the following. The terminal should return a link, which can be viewed via a browser or with the <code>curl</code> commands documented in the API reference section.
-- <code>make run</code></p>
-<p>To run a rebuild of the code, run this command instead. This command will automatically kill, rebuild, and test the code before running.
-- <code>make iterate</code></p>
+<p>To install the Docker container, first install Docker.</p>
+<ul>
+<li><code>apt-get install docker</code> (if using an Ubuntu machine, else get Docker from <a href="https://www.docker.com/">docker.com</a>.)</li>
+</ul>
+<p>Next install the containers.</p>
+<ul>
+<li><code>docker pull akhilsadam/positional-iss:0.0.2</code></li>
+</ul>
+</div>
+<div id="run" class="section level3">
+<h3>Run</h3>
+<p>To test the code, please run the following in a terminal.</p>
+<ul>
+<li><code>docker run -it --rm akhilsadam/positional-iss:0.0.2 testall.py</code></li>
+</ul>
+<p>To run the code, please run the following in a terminal. The terminal should return a link, which can be viewed via a browser or with the <code>curl</code> commands documented in the API reference section.</p>
+<ul>
+<li><code>docker run --name &quot;positional-iss&quot; -p 5026:5026 akhilsadam/positional-iss:0.0.2 wsgi.py</code></li>
+</ul>
+<p>Now we will move to the source installation.</p>
+</div>
+</div>
+<div id="from-source" class="section level2">
+<h2>From Source:</h2>
+<p>Since this is a Docker build, the requirements need not be installed on the server, as it will automatically be done on the Docker image.<br />
+All commands, unless otherwise noted, are to be run in a terminal (in the home directory of the cloned repository).</p>
+<div id="build" class="section level3">
+<h3>Build</h3>
+<p>Again, first install Docker.</p>
+<ul>
+<li><code>apt-get install docker</code> (if using an Ubuntu machine, else get Docker from <a href="https://www.docker.com/">docker.com</a>.)</li>
+</ul>
+<p>Next, clone the repository and change directory into the repository.</p>
+<ul>
+<li><p><code>git clone git@github.com:akhilsadam/positional-iss.git</code></p></li>
+<li><p><code>cd positional-iss</code></p></li>
+</ul>
+<p>Now build the image.</p>
+<ul>
+<li><code>make build</code></li>
+</ul>
+</div>
+<div id="run-1" class="section level3">
+<h3>Run</h3>
+<p>To test the code, please run one of the following.</p>
+<ul>
+<li><p><code>make test</code></p></li>
+<li><p><code>pytest</code></p></li>
+</ul>
+<p>To run the code, please run the following. The terminal should return a link, which can be viewed via a browser or with the <code>curl</code> commands documented in the API reference section.</p>
+<ul>
+<li><code>make run</code></li>
+</ul>
+<p>To run a rebuild of the code, run this command instead. This command will automatically kill, rebuild, and test the code before running.</p>
+<ul>
+<li><code>make iterate</code></li>
+</ul>
+</div>
+</div>
+<div id="usage" class="section level2">
+<h2>Usage</h2>
+<p>As mentioned above, please use a browser or the <code>curl</code> utility to view output. All endpoints as mentioned in the REST API section below are valid urls, and navigating to those links will return expected output.
+The REST API follows, with example input and expected output given.</p>
 </div>
 </div>
 <div id="rest-api" class="section level1">
@@ -32945,6 +32980,11 @@ All commands, unless otherwise noted, are to be run in a terminal (in the home d
 <li>Example: <code>curl -X GET http://0.0.0.0:5026/pdf -H &quot;accept: application/json&quot;</code></li>
 </ul>
 </div>
+</div>
+<div id="ethical-considerations" class="section level1">
+<h1>Ethical Considerations</h1>
+<p>Unfortunately, as with any other application, technology lends itself to misuse. Location information such as that returned by this application is a security and privacy risk. For this particular case, there is no privacy risk as the ISS is an inanimate object, however, there is a security risk. As the ISS is an international research station, there is generally no reason for it to suffer harm, but the information provided here can be used for a targeted attack.
+So please treat the information provided by this application wisely, and do not use it to cause harm, intentionally or unintentionally.</p>
 </div>
 </main>
 
