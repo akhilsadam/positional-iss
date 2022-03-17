@@ -71,4 +71,4 @@ commit:
 	git push
 
 all: # only on a win terminal
-	sh all.sh & (wait 10; make api; make pdf; make readme;); fg
+	(sleep 30 & make api; make pdf; make readme;) & sh all.sh && fg
