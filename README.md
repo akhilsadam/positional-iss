@@ -21,23 +21,23 @@ The source is available <a href="https://github.com/akhilsadam/positional-iss/">
 
 ##  Files
 
- - `app/`:              The application folder.
- - `doc/`:              A documentation folder.
- - `Dockerfile`:        A dockerfile for containerization.
- - `Makefile`:          A makefile for ease of compilation.
- - `requirements.txt`   The list of Python3 requirements.
- - `wsgi.py`:           The main Python file.
+ - `app/`:&nbsp;&nbsp;&nbsp;The application folder.
+ - `doc/`:&nbsp;&nbsp;&nbsp;A documentation folder.
+ - `Dockerfile`:&nbsp;&nbsp;A dockerfile for containerization.
+ - `Makefile`:&nbsp;&nbsp;A makefile for ease of compilation.
+ - `requirements.txt`:&nbsp;The list of Python3 requirements.
+ - `wsgi.py`:&nbsp;&nbsp;&nbsp;The main Python file.
 
 ### The App/ Directory
 
-- `api/`:               Contains API route definitions in Python.
-- `static/`:            Contains static files for browser use.
-- `templates/`:         Contains Jinja2 templates for browser use.
-- `test`:               Contains testfiles in Python.
-- `assets.py`:          Collects static files for browser use.
-- `routes.py`:          Collects the API route definitions.
-- `log.py`:             Defines Python logger.
-- `options.py`:         Defines global options, like the application url.
+- `api/`:&nbsp;&nbsp;&nbsp;Contains API route definitions in Python.
+- `static/`:&nbsp;&nbsp;&nbsp;Contains static files for browser use.
+- `templates/`:&nbsp;&nbsp;Contains Jinja2 templates for browser use.
+- `test`:&nbsp;&nbsp;&nbsp;Contains testfiles in Python.
+- `assets.py`:&nbsp;&nbsp;Collects static files for browser use.
+- `routes.py`:&nbsp;&nbsp;Collects the API route definitions.
+- `log.py`:&nbsp;&nbsp;&nbsp;Defines Python logger.
+- `options.py`:&nbsp;&nbsp;Defines global options, like the application url.
 
 
 
