@@ -57,6 +57,61 @@ Example input data is available at the above links.
 
 #  Installation & Usage
 
+A user can build this project from source, or use the provided Docker container on DockerHub.  
+A Docker installation is required for source builds, as we build and run a Docker image. The following commands are all terminal commands, and are expected to run on a Ubuntu 20.04 machine with Python3, and are written in that fashion. Mileage may vary for other systems.  
+We will describe the Docker installation first.  
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#from-docker)
+
+##  From Docker:
+
+### Install
+
+To install the Docker container, first install Docker.
+  - `apt-get install docker` (if using an Ubuntu machine, else get Docker from <a href="https://www.docker.com/">docker.com</a>.)
+
+Next install the containers.
+  - `docker pull akhilsadam/positional-iss:0.0.2`
+### Run 
+
+To test the code, please run the following in a terminal.
+  - `docker run -it --rm akhilsadam/positional-iss:0.0.2 testall.py`
+
+To run the code, please run the following in a terminal. The terminal should return a link, which can be viewed via a browser or with the `curl` commands documented in the API reference section.
+  - `docker run --name "positional-iss" -p 5026:5026 akhilsadam/positional-iss:0.0.2 wsgi.py`
+
+Now we will move to the source installation.
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#from-source)
+
+##  From Source:
+
+Since this is a Docker build, the requirements need not be installed on the server, as it will automatically be done on the Docker image.
+All commands, unless otherwise noted, are to be run in a terminal (in the home directory of the cloned repository).
+### Build
+
+Again, first install Docker.
+  - `apt-get install docker` (if using an Ubuntu machine, else get Docker from <a href="https://www.docker.com/">docker.com</a>.)
+
+Next, clone the repository and change directory into the repository.
+  - `git clone git@github.com:akhilsadam/positional-iss.git`
+  - `cd positional-iss`
+
+Now build the image.
+  - `make build`
+### Run 
+
+To test the code, please run one of the following.
+  - `make test`
+  - `pytest`
+
+To run the code, please run the following. The terminal should return a link, which can be viewed via a browser or with the `curl` commands documented in the API reference section.
+  - `make run`
+
+To run a rebuild of the code, run this command instead. This command will automatically kill, rebuild, and test the code before running.
+  - `make iterate`
+
+
 <details>
 <summary> Complete API Reference </summary>
 
@@ -414,6 +469,12 @@ Example input data is available at the above links.
 		* [The App/ Directory](#the-app-directory)
 	* [ Input Data](#-input-data)
 * [ Installation & Usage](#-installation--usage)
+	* [ From Docker:](#-from-docker)
+		* [Install](#install)
+		* [Run ](#run-)
+	* [ From Source:](#-from-source)
+		* [Build](#build)
+		* [Run ](#run--1)
 * [ REST API:](#-rest-api)
 		* [ENDPOINT: `/`](#endpoint-)
 		* [ENDPOINT: `/api/doc`](#endpoint-apidoc)

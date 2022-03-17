@@ -11,16 +11,16 @@
 <meta name="viewport" content="width=device-width">
 <meta property="dc:type" content="Text">
 <meta property="dc:language" content="en">
-<meta property="dc:title og:title" content="positional-iss">
+<meta property="dc:title og:title" content="positional-iss API Reference">
 
 <meta property="og:image" content="https://www.jstatsoft.org/public/site/images/jstatsoft/jsslogo.jpg">
 <link href="data:image/gif;base64,R0lGODlhEAAQAPcoAGtje2tje2N7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tWN7tZycvWN7tZycva291pycva291q291t7W3q291q291q291q291pycvZycvd7W3r2tlL2tlNbOtdbOtdbOtd7W3tbOtf///97W3v///////97W3tbOtdbOtb2tlN7W3tbOtdbOtdbOtb2tlL2tlNbOtdbOtdbOtdbOtdbOtb2UY72UY72UY72UY5xaQtbOtZycvZRzY72tlJRzY2tje72tlP///////////72UY3NaWpxaQr2UY72UY72UY2tje3NaWnNaWnNaWnNaWnNaWnNaWmtje5RzY5xaQnNaWnNaWpxaQpxaQpxaQmtKQlopOSEQIWtKQlopOSEQIWtKQmtKQmtKQlopOWtKQlopOVopOVopOVopOVopOVopOWtKQlopOVopOVopOWtKQiEQISEQIVopOVopOVopOSEQIWtKQiEQISEQISEQISEQIWtKQlopOWtKQlopOWtKQlopOSEQISEQISEQISEQIXNaWgAAACEQISEQISEQISEQIWtKQmtKQnNaWnNaWnNaWiEQISEQISEQIWtKQnNaWr2UY3NaWmtKQiEQISEQISEQIXNaWlopOWtKQmtje2tje1opOSEQIZRzY5RzY3NaWmtKQiEQISEQISEQIQAAACEQIZxaQlopOVopOVopOb2UYyEQIXNaWr2UY5RzY3NaWiEQISEQISEQISEQISEQISEQIWtKQpxaQlopOVopOZRzYyEQIWtKQnNaWnNaWiEQISEQISEQISEQISEQISEQISEQIZxaQpxaQlopOWtKQmtKQlopOQAAAHNaWmtKQiEQISEQISEQISEQISEQIQAAACEQIVopOSEQIVopOZxaQlopOQAAACEQISEQISEQISEQISEQISEQISEQIQAAACEQIQAAAFopOQAAAFopOVopOSEQISEQISEQISEQISEQISEQISEQIQAAACEQISEQIQAAACEQISH5BAAAAAAALAAAAAAQABAAAAj+AAEEEDCAQAEDBxAkULCAQQMHDyBEkDCBQgULFzBk0LCBQwcPH0CEEDGCRAkTJ1CkULGCRQsXL2DEkDGDRg0bN3Dk0LGDRw8fP4AEETKESBEjR5AkUbKESRMnT6BEkTKFShUrV7Bk0bKFSxcvX8CEETOGTBkzZ9CkUbOGTRs3b+DEkTOHTh07d/Dk0bOHTx8/fwAFEjSIUCFDhxAlUrSIUSNHjyBFkjSJUiVLlzBl0rSJUydPn0CFEjWKVClTp1ClUrWKVStXr2DFkjWLVi1bt3Dl0rWLVy9fv4AFEzaMWDFjx5AlU7aMWTNnz6BFkzaNWjVr17Bl07aNWzdv38AlhRM3jlw5c+fQpVO3jl07d+/gxZM3j149e/fw5dO3j18/f/8EBAA7" rel="icon">
-<meta name="description" property="dc:description og:description schema:description" content="positional-iss">
+<meta name="description" property="dc:description og:description schema:description" content="positional-iss API Reference">
 
 
 <meta name="keywords" property="dc:subject" content="positional-issDockerFlaskPython3R">
 
-<title>positional-iss</title>
+<title>positional-iss API Reference</title>
 
 <script>
 window.PagedConfig = {
@@ -32447,8 +32447,8 @@ width: calc(var(--pagedjs-width) + 2 * var(--screen-pages-spacing));
 <article>
 
 <header id="header" class="title-page">
-<h1 class="title">positional-iss</h1>
-<span class="shorttitle" style="display: none;" aria-hidden="true">positional-iss</span>
+<h1 class="title">positional-iss API Reference</h1>
+<span class="shorttitle" style="display: none;" aria-hidden="true">positional-iss API Reference</span>
 <div class="authors-container" role="list">
 <p class="author-item" role="listitem" style="--rank: 1;">
 <span class="author">Akhil Sadam | as97822</span>
@@ -32470,8 +32470,37 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 </section>
 
 <main role="main">
-<div id="implementation-files" class="section level2">
-<h2>Implementation / Files</h2>
+<div id="motivation" class="section level1">
+<h1>Motivation</h1>
+<p>While the ISS (International Space Station) positions and sightings are freely available on the National Aeronautics and Space Administration website, finding data for a particular time and place is rather difficult.<br />
+For skywatchers, to be able to see the ISS, one will need to predict the location at a particular time, along with the visibility from their location. This project is an example containerized Flask webserver, and is designed to help with that goal, while also serving as an example for Flask REST-API containerization.<br />
+We provide easy access to sightings of the ISS from various regions and cities in the USA, particularly the Midwest, and also provide time-based positional data for February 13, 2022. The user can then extrapolate the current and future positions of the ISS from this data.</p>
+</div>
+<div id="implementation" class="section level1">
+<h1>Implementation</h1>
+<p>This project uses Python3 (in particular Flask), and Docker for containerization. Specific Python3 package requirements can be found <a href="https://github.com/akhilsadam/positional-iss/blob/master/requirements.txt">here</a>. R and the npm package <code>@appnest/readme</code> by Andreas Mehlsen are used for documentation, but are not part of the API and will not be documented.</p>
+<p>The source is available <a href="https://github.com/akhilsadam/positional-iss/">here</a>, and a list of important files can be found below.
+## Files</p>
+<ul>
+<li><code>app/</code>:                         The application folder.</li>
+<li><code>doc/</code>:                         A documentation folder.</li>
+<li><code>Dockerfile</code>:               A dockerfile for containerization.</li>
+<li><code>Makefile</code>:                  A makefile for ease of compilation.</li>
+<li><code>requirements.txt</code>:    The list of Python3 requirements.</li>
+<li><code>wsgi.py</code>:                   The main Python file.</li>
+</ul>
+<div id="the-app-directory" class="section level3">
+<h3>The App/ Directory</h3>
+<ul>
+<li><code>api/</code>:                    Contains API route definitions in Python.</li>
+<li><code>static/</code>:               Contains static files for browser use.</li>
+<li><code>templates/</code>:          Contains Jinja2 templates for browser use.</li>
+<li><code>test</code>:                    Contains testfiles in Python.</li>
+<li><code>assets.py</code>:           Collects static files for browser use.</li>
+<li><code>routes.py</code>:           Collects the API route definitions.</li>
+<li><code>log.py</code>:                Defines Python logger.</li>
+<li><code>options.py</code>:         Defines global options, like the application url.</li>
+</ul>
 </div>
 <div id="input-data" class="section level2">
 <h2>Input Data</h2>
@@ -32479,6 +32508,10 @@ An containerized Flask webserver designed for querying ISS sightings and positio
 <li>The application queries data from the National Aeronautics and Space Administration (NASA) public website, in particular ISS positional information via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_OEM/ISS.OEM_J2K_EPH.xml">Public Distribution file</a> and regional sighting data for the Midwest via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_sightings/XMLsightingData_citiesUSA05.xml">XMLsightingData_citiesUSA05</a> file.</li>
 </ul>
 <p>Example input data is available at the above links.</p>
+</div>
+</div>
+<div id="installation-usage" class="section level1">
+<h1>Installation &amp; Usage</h1>
 </div>
 <div id="rest-api" class="section level1">
 <h1>REST API:</h1>
