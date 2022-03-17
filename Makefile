@@ -70,5 +70,16 @@ commit:
 	git commit -am "[glob] ${msg}"
 	git push
 
-all: # only on a win terminal
-	(sleep 30 & make api; make pdf; make readme;) & sh all.sh && fg
+all: 
+	pytest 
+	make kill 
+	make clean 
+	make build
+	make test
+	make run 
+	# run doc in a win terminal
+
+doc:
+	make api
+	make pdf
+	make readme

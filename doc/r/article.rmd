@@ -1,5 +1,5 @@
 ---
-title: "positional-iss"
+title: "positional-iss API Reference"
 author:
   - name: Akhil Sadam |  as97822
     affiliation: Aerospace Department, University of Texas at Austin

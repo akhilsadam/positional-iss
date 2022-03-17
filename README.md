@@ -9,9 +9,38 @@ Midterm project for COE332.</b></br>
 
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#implementation--files)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#implementation)
 
-##  Implementation / Files
+#  Implementation
+
+This project uses Python3 (in particular Flask), and Docker for containerization. Specific Python3 package requirements can be found <a href="https://github.com/akhilsadam/positional-iss/blob/master/requirements.txt">here</a>. R and the npm package `@appnest/readme` by Andreas Mehlsen are used for documentation, but are not part of the API and will not be documented.
+
+The source is available <a href="https://github.com/akhilsadam/positional-iss/">here</a>, and a list of important files can be found below.
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#files)
+
+##  Files
+
+ - `app/`:              The application folder.
+ - `doc/`:              A documentation folder.
+ - `Dockerfile`:        A dockerfile for containerization.
+ - `Makefile`:          A makefile for ease of compilation.
+ - `requirements.txt`   The list of Python3 requirements.
+ - `wsgi.py`:           The main Python file.
+
+### The App/ Directory
+
+- `api/`:               Contains API route definitions in Python.
+- `static/`:            Contains static files for browser use.
+- `templates/`:         Contains Jinja2 templates for browser use.
+- `test`:               Contains testfiles in Python.
+- `assets.py`:          Collects static files for browser use.
+- `routes.py`:          Collects the API route definitions.
+- `log.py`:             Defines Python logger.
+- `options.py`:         Defines global options, like the application url.
+
+
+
 
 
 
@@ -22,6 +51,15 @@ Midterm project for COE332.</b></br>
 - The application queries data from the National Aeronautics and Space Administration (NASA) public website, in particular ISS positional information via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_OEM/ISS.OEM_J2K_EPH.xml">Public Distribution file</a> and regional sighting data for the Midwest via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_sightings/XMLsightingData_citiesUSA05.xml">XMLsightingData_citiesUSA05</a> file.
 
 Example input data is available at the above links.
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#installation--usage)
+
+#  Installation & Usage
+
+<details>
+<summary> Complete API Reference </summary>
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#rest-api)
 
@@ -363,13 +401,19 @@ Example input data is available at the above links.
 
  - Example: `curl -X GET http://0.0.0.0:5026/pdf -H "accept: application/json"`
 
+
+</details>
+
 <!-- 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#table-of-contents)
 
 ##  Table of Contents
 
-	* [ Implementation / Files](#-implementation--files)
+* [ Implementation](#-implementation)
+	* [ Files](#-files)
+		* [The App/ Directory](#the-app-directory)
 	* [ Input Data](#-input-data)
+* [ Installation & Usage](#-installation--usage)
 * [ REST API:](#-rest-api)
 		* [ENDPOINT: `/`](#endpoint-)
 		* [ENDPOINT: `/api/doc`](#endpoint-apidoc)
