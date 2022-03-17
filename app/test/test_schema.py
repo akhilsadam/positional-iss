@@ -7,7 +7,7 @@ import json as js
 # from hypothesis.extra import ghostwriter
 # from hypothesis import given
 # from hypothesis.strategies import text
-from .ghost import appload
+from .conftest import app,appload
 from ..api.schema import * #schema
 
 # Disclaimer: note I am actually not using Schemas properly... that requires a bit more effort... (so we have a very minimal test case set here)

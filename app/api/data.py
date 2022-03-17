@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, render_template
+from flask import jsonify, render_template
 from flask import current_app as app
 from flask import request as rq
 

@@ -18,19 +18,19 @@ from app.options import baseurl,mdfile
 # Not pytesting the following functions as 1) testing the requests is unecessary, 2) this is not core functionality and is not required by the specifications,
 # 3) this is an API test in and of itself, and part of other tests, 4) developer exhaustion...
 
-def capture(url, type=0, appcontext=False):
+def capture(url, type=0, appcontext=None):
   """Parses JSON from an endpoint.
   Args:
       url (str): A string containing the endpoint URL.
       type (int): GET or POST endpoint?
-      appcontext (bool): Testing?
+      appcontext (object): None if not testing.
   Returns:
       dict: the Python dictionary version of the input url JSON.
   """
-  data = lambda x,appcontext: x.data if appcontext else x.content
+  data = lambda x,appcontext: x.data if appcontext is not None else x.content
   decode = lambda x,appcontext: js.loads(data(x,appcontext).decode('utf8').replace("'", '"'))
 
-  rqx = rqs if not appcontext else app.test_client()
+  rqx = rqs if appcontext is None else appcontext
   cap = rqx.get(url) if type==0 else rqx.post(url)
   out = decode(cap,appcontext)
   logger.info(out)
@@ -46,7 +46,7 @@ def callresponse(i,k,path,values,io,rest,denylist,appcontext):
       io (np.ndarray): an array containing all possible api information.
       rest (str): endpoint type.
       denylist (list): endpoints not considered.
-      appcontext (bool): Testing?
+      appcontext (object): None if not testing.
   Returns:
       int: success of API call (will be zero for success and expected fails).
       str: the resulting response.
@@ -89,13 +89,13 @@ def callresponse(i,k,path,values,io,rest,denylist,appcontext):
 
 # really should split this function...
 
-def generateAPI(api,test=False,badvalues=False,appcontext=False):
+def generateAPI(api,test=False,badvalues=False,appcontext=None):
   """Structure API information (currenly assumes single endpoint: either GET or POST, not both).
   Arguments: 
     api (dict): The API dictionary parsed by FlaskApiSpec.
     test (bool): Save test outputs?
     badvalues (bool): Use bad values for testing?
-    appcontext (bool): Testing?
+    appcontext (object): None if not testing?
   Returns:
     array: a NumPy array structure containing endpoints, descriptions, parameter names&descriptions, response descriptions, example input calls, example outputs.
   """

@@ -1,6 +1,6 @@
 """Routes for Flask app."""
 import os
-from flask import current_app as app
+from flask import Blueprint, current_app as app
 from flask import render_template
 
 from app.options import *
@@ -14,7 +14,6 @@ from apispec_webframeworks.flask import FlaskPlugin
 from flask_apispec.extension import FlaskApiSpec
 
 from app.api.schema import * #schema
-
 
 appname = "positional-iss"
 apiversion='v0.0.1'
