@@ -15,7 +15,11 @@ Midterm project for COE332.</b></br>
 
 This project uses Python3 (in particular Flask), and Docker for containerization. Specific Python3 package requirements can be found <a href="https://github.com/akhilsadam/positional-iss/blob/master/requirements.txt">here</a>. R and the npm package `@appnest/readme` by Andreas Mehlsen are used for documentation, but are not part of the API and will not be documented.
 
-The source is available <a href="https://github.com/akhilsadam/positional-iss/">here</a>, and a list of important files can be found below.
+The source is available <a href="https://github.com/akhilsadam/positional-iss/">here</a>.
+
+
+A list of important files can be found below.
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#files)
 
@@ -50,7 +54,11 @@ The source is available <a href="https://github.com/akhilsadam/positional-iss/">
 
 - The application queries data from the National Aeronautics and Space Administration (NASA) public website, in particular ISS positional information via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_OEM/ISS.OEM_J2K_EPH.xml">Public Distribution file</a> and regional sighting data for the Midwest via the <a href="https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_sightings/XMLsightingData_citiesUSA05.xml">XMLsightingData_citiesUSA05</a> file.
 
-Example input data is available at the above links.
+
+
+Example input data is available at the above links, and can also be found in the writeup, at `app/api/static/doc/article.pdf`.
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#installation--usage)
@@ -58,15 +66,16 @@ Example input data is available at the above links.
 #  Installation & Usage
 
 A user can build this project from source, or use the provided Docker container on DockerHub.  
-A Docker installation is required for source builds, as we build and run a Docker image. The following commands are all terminal commands, and are expected to run on a Ubuntu 20.04 machine with Python3, and are written in that fashion. Mileage may vary for other systems.  
-We will describe the Docker installation first.   
+A Docker installation is required for source builds, as we build and run a Docker image.
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#from-docker)
 
-##  From Docker:
 
-### Install
+The following commands are all terminal commands, and are expected to run on a Ubuntu 20.04 machine with Python3, and are written in that fashion. Mileage may vary for other systems. We will describe the Docker installation first.   
+
+### From Docker:
+
+#### Install
 
 To install the Docker container, first install Docker.  
 
@@ -76,7 +85,7 @@ Next install the containers.
 
   - `docker pull akhilsadam/positional-iss:0.0.2`  
 
-### Run  
+#### Run  
 
 To test the code, please run the following in a terminal.  
 
@@ -90,15 +99,12 @@ To run the code, please run the following in a terminal. The terminal should ret
 
 Now we will move to the source installation.  
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#from-source--)
-
-##  From Source:  
+### From Source:  
 
 Since this is a Docker build, the requirements need not be installed on the server, as it will automatically be done on the Docker image.  
 All commands, unless otherwise noted, are to be run in a terminal (in the home directory of the cloned repository).  
 
-### Build  
+#### Build  
 
 Again, first install Docker.  
 
@@ -115,7 +121,7 @@ Now build the image.
 
   - `make build`  
 
-### Run  
+#### Run  
 
 To test the code, please run one of the following.  
 
@@ -133,12 +139,16 @@ To run a rebuild of the code, run this command instead. This command will automa
   - `make iterate`  
 
 
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#usage--)
 
 ##  Usage  
 
-As mentioned above, please use a browser or the `curl` utility to view output. All endpoints as mentioned in the REST API section below are valid urls, and navigating to those links will return expected output.
-The REST API follows, with example input and expected output given.
+
+
+As mentioned above, a browser or the `curl` utility is necessary to view output. All endpoints as mentioned in the REST API section are valid urls, and navigating to those links will return expected output as included in this document.
+
 
 <details>
 <summary> Complete API Reference </summary>
@@ -146,7 +156,7 @@ The REST API follows, with example input and expected output given.
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#rest-api)
 
-#  REST API:
+##  REST API:
 ### ENDPOINT: `/`
  - Description: Get homepage HTML
  - Parameters: 
@@ -497,14 +507,14 @@ The REST API follows, with example input and expected output given.
 		* [The App/ Directory](#the-app-directory)
 	* [ Input Data](#-input-data)
 * [ Installation & Usage](#-installation--usage)
-	* [ From Docker:](#-from-docker)
-		* [Install](#install)
-		* [Run  ](#run--)
-	* [ From Source:  ](#-from-source--)
-		* [Build  ](#build--)
-		* [Run  ](#run---1)
+		* [From Docker:](#from-docker)
+			* [Install](#install)
+			* [Run  ](#run--)
+		* [From Source:  ](#from-source--)
+			* [Build  ](#build--)
+			* [Run  ](#run---1)
 	* [ Usage  ](#-usage--)
-* [ REST API:](#-rest-api)
+	* [ REST API:](#-rest-api)
 		* [ENDPOINT: `/`](#endpoint-)
 		* [ENDPOINT: `/api/doc`](#endpoint-apidoc)
 		* [ENDPOINT: `/api/save`](#endpoint-apisave)

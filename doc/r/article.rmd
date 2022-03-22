@@ -1,5 +1,5 @@
 ---
-title: "positional-iss API Reference"
+title: "positional-iss"
 author:
   - name: Akhil Sadam |  as97822
     affiliation: Aerospace Department, University of Texas at Austin
@@ -28,6 +28,9 @@ knitr::opts_chunk$set(echo = FALSE,
 library("jpeg")
 require("R.utils")
 library("animation")
+library("XML")
+library("methods")
+library("httr")
 ```
 
 ```{r child = '../motivate.md'}
@@ -39,13 +42,37 @@ library("animation")
 ```{r child = '../input.md'}
 ```
 
+```{r child = '../inputR.md'}
+```
+
 ```{r child = '../install.md'}
 ```
 
-```{r child = '../api.md'}
+```{r child = '../installR.md'}
+```
+
+```{r child = '../usage.md'}
 ```
 
 ```{r child = '../ethics.md'}
+```
+
+```{=html}
+<!-- This '<div id="refs"></div>' needs to 
+be here if you have appendix pages 
+otherwise you can remove it.-->
+```
+::: {#refs}
+:::
+
+# Appendix {-}
+
+## Installation Detail
+
+```{r child = '../installDetail.md'}
+```
+
+```{r child = '../api.md'}
 ```
 
 
